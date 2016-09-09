@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// RectTransformUtiltiy拡張クラス.

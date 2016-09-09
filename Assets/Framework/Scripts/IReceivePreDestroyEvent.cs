@@ -3,7 +3,7 @@ using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// Destroy関数が呼ばれる直前にイベントをフックできるインターフェイス.

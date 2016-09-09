@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	public abstract class EditorBase : Editor
 	{

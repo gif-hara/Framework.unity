@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// 遅延タイマーコンポーネント.
@@ -14,13 +14,13 @@ namespace HK.Framwork
 		[SerializeField]
 		private float delay;
 
-        [SerializeField]
+		[SerializeField]
 		private float duration = 0.0f;
 
 		void Update()
 		{
-            this.duration += Time.deltaTime;
-            this.duration = this.duration > this.delay ? this.delay : this.duration;
+			this.duration += Time.deltaTime;
+			this.duration = this.duration > this.delay ? this.delay : this.duration;
 		}
 
 		public override void Reset()
@@ -28,26 +28,14 @@ namespace HK.Framwork
 			this.duration = 0.0f;
 		}
 
-        public void SetDelay(FloatProperty.Finder finder)
-        {
-            this.delay = finder.Get;
-        }
-
-		public override bool Complete
+		public void SetDelay(FloatProperty.Finder finder)
 		{
-			get
-			{
-				return this.delay <= this.duration;
-			}
+			this.delay = finder.Get;
 		}
 
-		public override float Normalize
-		{
-			get
-			{
-				return this.duration / this.delay;
-			}
-		}
+		public override bool Complete { get { return this.delay <= this.duration; } }
+
+		public override float Normalize { get { return this.duration / this.delay; } }
 
 	}
 }

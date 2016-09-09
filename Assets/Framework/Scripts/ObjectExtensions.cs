@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// UnityEngine.Objecrの拡張クラス.

@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditorInternal;
 using System.Collections.Generic;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	[CustomEditor( typeof( StringAsset ) )]
 	public class StringAssetEditor : EditorScriptableObject<StringAsset>

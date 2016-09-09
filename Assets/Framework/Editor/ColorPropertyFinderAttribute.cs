@@ -4,7 +4,7 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using UnityEditor;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// .

@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// LayerMask拡張クラス.

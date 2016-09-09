@@ -5,7 +5,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// コンポーネントのMove UpとMove Downを容易に行うEditorWindow.

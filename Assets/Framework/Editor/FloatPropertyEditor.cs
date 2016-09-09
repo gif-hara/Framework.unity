@@ -4,7 +4,7 @@ using UnityEditorInternal;
 using System.Collections.Generic;
 using System;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	[CustomEditor( typeof( FloatProperty ) )]
 	public class FloatPropertyEditor : EditorScriptableObject<FloatProperty>

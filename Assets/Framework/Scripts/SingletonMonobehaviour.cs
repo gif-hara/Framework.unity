@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// シングルトンコンポーネント.

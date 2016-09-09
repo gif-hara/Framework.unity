@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	public abstract class EditorScriptableObject<T> : EditorBase where T : ScriptableObject
 	{

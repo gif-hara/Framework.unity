@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.Assertions;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	/// <summary>
 	/// 文字列を管理するアセット.

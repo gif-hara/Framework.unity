@@ -3,7 +3,7 @@ using UnityEditor;
 using System.Collections;
 using System;
 
-namespace HK.Framwork
+namespace HK.Framework
 {
 	public abstract class EditorMonoBehaviour<T> : EditorBase where T : MonoBehaviour
 	{
