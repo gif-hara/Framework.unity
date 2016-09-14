@@ -46,5 +46,18 @@ namespace HK.Framework
 		{
 			return (angle + (MathExtension.IsClockwise(currentAngle, targetAngle) ? -360.0f : 360.0f)) % 360.0f;
 		}
+
+		/// <summary>
+		/// 0を含む符号値を返す.
+		/// a = 0なら0を返す.
+		/// a > 0なら1を返す.
+		/// a < 0なら-1を返す.
+		/// </summary>
+		/// <returns>The sign.</returns>
+		/// <param name="a">The alpha component.</param>
+		public static float ZSign(float a)
+		{
+			return IsEqual(a, 0) ? 0 : Mathf.Sign(a);
+		}
 	}
 }
