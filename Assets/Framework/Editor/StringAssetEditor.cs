@@ -20,7 +20,7 @@ namespace HK.Framework
 			reorderableList.elementHeightCallback = (index) =>
 			{
 				var text = reorderableList.serializedProperty.GetArrayElementAtIndex(index).FindPropertyRelative("value").FindPropertyRelative(culture).stringValue;
-				return text.Split(new string[]{ System.Environment.NewLine }, 0).Length * EditorGUIUtility.singleLineHeight;
+				return this.GetElementHeight(text);
 			};
 			reorderableList.drawHeaderCallback = ( Rect rect) =>
 			{
@@ -31,24 +31,13 @@ namespace HK.Framework
 			reorderableList.drawElementCallback = ( Rect rect, int index, bool selected, bool focused) =>
 			{
 				var property = reorderableList.serializedProperty.GetArrayElementAtIndex(index);
-
-				var indentLevel = EditorGUI.indentLevel;
-				EditorGUI.indentLevel += 1;
-
 				var valueProperty = property.FindPropertyRelative("value");
 				var text = valueProperty.FindPropertyRelative(culture);
-				var valueRect = new Rect(rect.x, rect.y, rect.width, text.stringValue.Split(new string[]{ System.Environment.NewLine }, 0).Length * EditorGUIUtility.singleLineHeight);
-
-				if(culture == "ja")
-				{
-					text.stringValue = EditorGUI.TextArea(valueRect, text.stringValue);
-				}
-				else
-				{
-					EditorGUI.PropertyField(valueRect, valueProperty.FindPropertyRelative(culture), new GUIContent("ja = " + valueProperty.FindPropertyRelative("ja").stringValue));
-				}
-
-				EditorGUI.indentLevel = indentLevel;
+				var valueRect = new Rect(rect.x, rect.y, rect.width, this.GetElementHeight(text.stringValue));
+				EditorGUI.BeginDisabledGroup(true);
+				EditorGUI.TextArea(valueRect, culture);
+				EditorGUI.EndDisabledGroup();
+				text.stringValue = EditorGUI.TextArea(valueRect, text.stringValue);
 			};
 			reorderableList.onAddCallback = ( ReorderableList list) =>
 			{
@@ -76,6 +65,11 @@ namespace HK.Framework
 			{
 				this.culture = cultureIdentity;
 			}
+		}
+
+		private float GetElementHeight(string text)
+		{
+			return EditorGUIUtility.singleLineHeight + (text.Split(new string[]{ System.Environment.NewLine }, 0).Length - 1) * (EditorGUIUtility.singleLineHeight - 3);
 		}
 	}
 }
