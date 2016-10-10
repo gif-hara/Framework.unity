@@ -59,6 +59,7 @@ namespace HK.Framework
 		public override void OnInspectorGUI()
 		{
 			reorderableList.DoLayoutList();
+			serializedObject.ApplyModifiedProperties();
 		}
 
 		private void CultureButton(Rect origin, int index, string cultureIdentity)
