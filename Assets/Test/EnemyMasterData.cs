@@ -14,7 +14,7 @@ namespace HK.Framework
 		private TextAsset textAsset;
 
 		[SerializeField]
-		private string a, b, c, d, e, f, g, h, i, j, k, l, m, n;
+		private StringAsset.Finder a, b, c, d, e, f, g, h, i, j, k, l, m, n;
 
 		[ContextMenu("Test")]
 		private void Test()

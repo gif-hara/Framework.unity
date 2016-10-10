@@ -11,25 +11,25 @@ namespace HK.Framework
 	[System.Serializable][CreateAssetMenu()]
 	public class StringAsset : ScriptableObject
 	{
-	    [System.Serializable]
-	    public class Finder
-	    {
-	        public StringAsset target;
+		[System.Serializable]
+		public class Finder
+		{
+			public StringAsset target;
 
-	        public string value;
+			public string value;
 
-	        public string guid;
+			public string guid;
 
 #if !UNITY_EDITOR
 	        private string cachedValue;
 
 	        private bool isInitialize = false;
 #endif
-	        public override string ToString()
-	        {
+			public override string ToString()
+			{
 #if UNITY_EDITOR
-	                // 毎回取得することでゲーム中でも値を変更出来るように.
-	                return this.target.Get( this );
+				// 毎回取得することでゲーム中でも値を変更出来るように.
+				return this.target.Get(this);
 #else
 	                // 最適化のためキャッシュさせる.
 	                if(!this.isInitialize)
@@ -40,47 +40,77 @@ namespace HK.Framework
 
 	                return this.cachedValue;
 #endif
-	        }
+			}
 
-	        public string Get
-	        {
-	            get
-	            {
-	                return this.ToString();
-	            }
-	        }
+			public string Get
+			{
+				get
+				{
+					return this.ToString();
+				}
+			}
 
-	        public string Format(params object[] args)
-	        {
-	            return this.target.Format( this, args );
-	        }
-	    }
+			public string Format(params object[] args)
+			{
+				return this.target.Format(this, args);
+			}
+		}
 
-	    [System.Serializable]
-	    public class Data
-	    {
-	        public Value value;
+		[System.Serializable]
+		public class Data
+		{
+			public Value value;
 
-	        public string guid;
-	    }
+			public string guid;
+		}
 
-	    [System.Serializable]
-	    public class Value
-	    {
-	        public string ja;
+		[System.Serializable]
+		public class Value
+		{
+			public string ja;
 
-	        public string en;
+			public string en;
 
-	        public string Default
-	        {
-	            get
-	            {
-	                return this.ja;
-	            }
-	        }
-	    }
+			public string Default
+			{
+				get
+				{
+					return this.ja;
+				}
+			}
 
-	    public List<Data> database = new List<Data>();
+			public void Set(string value, string culture)
+			{
+				switch(culture)
+				{
+				case "ja":
+					this.ja = value;
+				break;
+				case "en":
+					this.en = value;
+				break;
+				default:
+					Debug.AssertFormat(false, "不正な値です. culture = {0}", culture);
+				break;
+				}
+			}
+
+			public string Get(string culture)
+			{
+				switch(culture)
+				{
+				case "ja":
+					return this.ja;
+				case "en":
+					return this.en;
+				default:
+					Debug.AssertFormat(false, "不正な値です. culture = {0}", culture);
+					return "";
+				}
+			}
+		}
+
+		public List<Data> database = new List<Data>();
 		
 		/// <summary>
 		/// 要素リスト.
@@ -94,23 +124,23 @@ namespace HK.Framework
 		private Dictionary<string, Value> findDictionary = null;
 #endif
 
-	    /// <summary>
-	    /// 要素を取得する.
-	    /// </summary>
-	    /// <param name="finder"></param>
-	    /// <returns></returns>
-		public string Get( Finder finder )
+		/// <summary>
+		/// 要素を取得する.
+		/// </summary>
+		/// <param name="finder"></param>
+		/// <returns></returns>
+		public string Get(Finder finder)
 		{
 #if UNITY_EDITOR
-	        var data = this.database.Find( d => d.guid == finder.guid );
-	        if(data == null)
-	        {
-	            Debug.LogError( "\"" + finder.value + "\"に対応する値がありませんでした." );
-	            return "";
-	        }
+			var data = this.database.Find(d => d.guid == finder.guid);
+			if(data == null)
+			{
+				Debug.LogError("\"" + finder.value + "\"に対応する値がありませんでした.");
+				return "";
+			}
 
-	        // ここでローカライズ.
-	        return data.value.ja;
+			// ここでローカライズ.
+			return data.value.ja;
 #else
 	        if( this.findDictionary == null )
 	        {
@@ -133,15 +163,16 @@ namespace HK.Framework
 			return result.ja;
 #endif
 		}
-	    /// <summary>
-	    /// string.Formatのラッピング.
-	    /// </summary>
-	    /// <param name="finder"></param>
-	    /// <param name="args"></param>
-	    /// <returns></returns>
-		public string Format( Finder finder, params object[] args )
+
+		/// <summary>
+		/// string.Formatのラッピング.
+		/// </summary>
+		/// <param name="finder"></param>
+		/// <param name="args"></param>
+		/// <returns></returns>
+		public string Format(Finder finder, params object[] args)
 		{
-			return string.Format( Get( finder ), args );
+			return string.Format(Get(finder), args);
 		}
 	}
 }
