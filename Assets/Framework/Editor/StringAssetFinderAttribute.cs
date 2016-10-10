@@ -11,6 +11,10 @@ namespace HK.Framework
 	{
 		private static Dictionary<StringAsset, string[]> cachedPopupList = new Dictionary<StringAsset, string[]>();
 
+		private static string[] emptyStringAsset = new string[0];
+
+		private static Rect rect = new Rect();
+
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
 			position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
@@ -20,15 +24,15 @@ namespace HK.Framework
 
 			var targetProperty = property.FindPropertyRelative("target");
 
-			var targetRect = new Rect(position.x, position.y, position.width / 2, position.height);
-			EditorGUI.PropertyField(targetRect, targetProperty, GUIContent.none);
+			rect.Set(position.x, position.y, position.width / 2, position.height);
+			EditorGUI.PropertyField(rect, targetProperty, GUIContent.none);
 
 			var stringAsset = targetProperty.objectReferenceValue as StringAsset;
-			var keyRect = new Rect(targetRect.x + targetRect.width, position.y, position.width / 2, position.height);
+			rect.Set(rect.x + rect.width, position.y, position.width / 2, position.height);
 			var finderValue = property.FindPropertyRelative("value");
 			var finderGuid = property.FindPropertyRelative("guid");
 			EditorGUI.BeginChangeCheck();
-			var selectedIndex = EditorGUI.Popup(keyRect, GetCurrentSelectKeyIndex(stringAsset, finderGuid.stringValue), GetKeyAndDescriptionList(stringAsset));
+			var selectedIndex = EditorGUI.Popup(rect, GetCurrentSelectKeyIndex(stringAsset, finderGuid.stringValue), GetKeyAndDescriptionList(stringAsset));
 			if(EditorGUI.EndChangeCheck() && stringAsset != null)
 			{
 				finderValue.stringValue = stringAsset.database[selectedIndex].value.Default;
@@ -38,11 +42,17 @@ namespace HK.Framework
 			EditorGUI.indentLevel = indentLevel;
 		}
 
+		public static void RemoveCachedDictionary(StringAsset stringAsset)
+		{
+			cachedPopupList.Remove(stringAsset);
+		}
+
+
 		private string[] GetKeyAndDescriptionList(StringAsset stringAsset)
 		{
 			if(stringAsset == null)
 			{
-				return new string[0];
+				return emptyStringAsset;
 			}
 
 			if(cachedPopupList.ContainsKey(stringAsset))

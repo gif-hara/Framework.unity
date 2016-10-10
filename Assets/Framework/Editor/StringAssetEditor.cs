@@ -42,6 +42,7 @@ namespace HK.Framework
 				{
 					Undo.RecordObject(this.target, "Changed StringAsset value");
 					data.value.Set(newValue, this.culture);
+					StringAssetFinderDrawer.RemoveCachedDictionary(this.Target);
 				}
 			};
 			reorderableList.onAddCallback = (ReorderableList list) =>
