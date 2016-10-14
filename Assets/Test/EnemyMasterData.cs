@@ -19,7 +19,7 @@ namespace HK.Framework
 		[ContextMenu("Test")]
 		private void Test()
 		{
-			var database = CsvParser<Enemy>.Parse(this.textAsset, s => new Enemy(s));
+			var database = CsvParser.Parse<Enemy>(this.textAsset, s => new Enemy(s));
 			database.ForEach(d => Debug.LogFormat("name = {0} hp = {1} armor = {2}", d.name, d.hp, d.armor));
 		}
 
