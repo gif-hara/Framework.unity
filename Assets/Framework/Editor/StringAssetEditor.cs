@@ -41,7 +41,10 @@ namespace HK.Framework
 				if(EditorGUI.EndChangeCheck())
 				{
 					Undo.RecordObject(this.target, "Changed StringAsset value");
-					data.value.Set(newValue, this.culture);
+					reorderableList.serializedProperty.GetArrayElementAtIndex(index)
+						.FindPropertyRelative("value")
+						.FindPropertyRelative(this.culture)
+						.stringValue = newValue;
 					StringAssetFinderDrawer.RemoveCachedDictionary(this.Target);
 				}
 			};

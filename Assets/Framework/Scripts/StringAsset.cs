@@ -59,6 +59,12 @@ namespace HK.Framework
 		[System.Serializable]
 		public class Data
 		{
+			public Data()
+			{
+				this.value = new Value();
+				this.guid = System.Guid.NewGuid().ToString();
+			}
+
 			public Value value;
 
 			public string guid;
@@ -67,9 +73,9 @@ namespace HK.Framework
 		[System.Serializable]
 		public class Value
 		{
-			public string ja;
+			public string ja = "";
 
-			public string en;
+			public string en = "";
 
 			public string Default
 			{
@@ -111,12 +117,7 @@ namespace HK.Framework
 		}
 
 		public List<Data> database = new List<Data>();
-		
-		/// <summary>
-		/// 要素リスト.
-		/// </summary>
-		public List<string> asset = new List<string>();
-		
+
 #if !UNITY_EDITOR
 		/// <summary>
 		/// 検索用のディクショナリ.
@@ -173,6 +174,11 @@ namespace HK.Framework
 		public string Format(Finder finder, params object[] args)
 		{
 			return string.Format(Get(finder), args);
+		}
+
+		public void Add()
+		{
+			this.database.Add(new Data());
 		}
 	}
 }
