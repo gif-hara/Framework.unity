@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using UnityEngine.Assertions;
+using System.Linq;
 
 namespace HK.Framework
 {
@@ -68,6 +69,19 @@ namespace HK.Framework
 			public Value value;
 
 			public string guid;
+		}
+
+		public class DataEqualityComparer : IEqualityComparer<Data>
+		{
+			public bool Equals(Data x, Data y)
+			{
+				return x.value.Default.CompareTo(y.value.Default) == 0;
+			}
+
+			public int GetHashCode(Data obj)
+			{
+				return obj.value.Default.GetHashCode();
+			}
 		}
 
 		[System.Serializable]
@@ -165,6 +179,33 @@ namespace HK.Framework
 #endif
 		}
 
+#if UNITY_EDITOR
+		[ContextMenu("Overlap Check")]
+		private void OverlapCheck()
+		{
+			var overlapList = this.database
+				.Where(d => this.database.FindAll(_d => _d.value.Default.CompareTo(d.value.Default) == 0).Count != 1)
+				.Distinct(new DataEqualityComparer())
+				.ToList();
+			if(overlapList.Count > 0)
+			{
+				foreach(var o in overlapList)
+				{
+					Debug.LogErrorFormat("\"{0}\"が複数存在します.", o.value.Default);
+				}
+			}
+			else
+			{
+				Debug.Log("重複していませんでした.");
+			}
+		}
+
+		[ContextMenu("Print Count")]
+		private void PrintCount()
+		{
+			Debug.LogFormat("{0}には{1}の要素が存在しています.", this.name, this.database.Count);
+		}
+#endif
 		/// <summary>
 		/// string.Formatのラッピング.
 		/// </summary>
