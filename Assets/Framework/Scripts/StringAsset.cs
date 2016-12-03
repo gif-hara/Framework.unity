@@ -26,6 +26,14 @@ namespace HK.Framework
 
 	        private bool isInitialize = false;
 #endif
+
+			public Finder(StringAsset target, Data data)
+			{
+				this.target = target;
+				this.value = data.value.Default;
+				this.guid = data.guid;
+			}
+
 			public override string ToString()
 			{
 #if UNITY_EDITOR
@@ -204,6 +212,13 @@ namespace HK.Framework
 		private void PrintCount()
 		{
 			Debug.LogFormat("{0}には{1}の要素が存在しています.", this.name, this.database.Count);
+		}
+
+		public Finder CreateFinder(string defaultString)
+		{
+			var data = this.database.Find(d => d.value.Default == defaultString);
+			Debug.AssertFormat(data != null, "{0}がありません.", defaultString);
+			return new Finder(this, data);
 		}
 #endif
 		/// <summary>
