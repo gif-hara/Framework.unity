@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-namespace HK.Framework
+namespace HK.Framework.Extensions
 {
 	/// <summary>
 	/// 計算系処理拡張クラス.
 	/// </summary>
-	public static class MathExtension
+	public static class Extensions
 	{
 		/// <summary>
 		/// 浮動小数点型の等値比較を行う.
@@ -41,7 +41,7 @@ namespace HK.Framework
 		/// <param name="targetAngle">Target angle.</param>
 		public static float NormalizeAngle(float angle, float currentAngle, float targetAngle)
 		{
-			return (angle + (MathExtension.IsClockwise(currentAngle, targetAngle) ? -360.0f : 360.0f)) % 360.0f;
+			return (angle + (Extensions.IsClockwise(currentAngle, targetAngle) ? -360.0f : 360.0f)) % 360.0f;
 		}
 
 		/// <summary>
