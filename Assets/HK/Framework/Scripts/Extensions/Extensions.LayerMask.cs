@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-namespace HK.Framework
+namespace HK.Framework.Extensions
 {
 	/// <summary>
 	/// LayerMask拡張クラス.
 	/// </summary>
-	public static class LayerMaskExtensions
+	public static partial class Extensions
 	{
 		public static bool IsIncluded(this LayerMask self, GameObject gameObject)
 		{

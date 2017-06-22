@@ -5,7 +5,7 @@ namespace HK.Framework.Extensions
 	/// <summary>
 	/// 計算系処理拡張クラス.
 	/// </summary>
-	public static class Extensions
+	public static partial class Extensions
 	{
 		/// <summary>
 		/// 浮動小数点型の等値比較を行う.
