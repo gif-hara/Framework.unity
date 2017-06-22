@@ -1,8 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Assertions;
-using UnityEngine.EventSystems;
-using System.Collections.Generic;
-using System.Collections;
 
 namespace HK.Framework
 {
