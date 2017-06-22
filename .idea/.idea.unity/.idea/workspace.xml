@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41779643-faca-4e21-8d1d-057cdf409701" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/HK/Framework/Scripts/EventSystems/GLEvent.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/HK/Framework/Scripts/EventSystems/GLEvent.cs.meta" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.unity/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.unity/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,79 +28,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StringAsset.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/StringAsset.cs">
+      <file leaf-file-name="UniRxEvent.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/EventSystems/UniRxEvent.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelayTimerBase.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/DelayTimerBase.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding>
-                <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
-                <marker date="1498064593000" expanded="true" signature="106:362" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="110:161" ph="/// DelayTimer抽象クラス. ... " />
-                <marker date="1498064593000" expanded="true" signature="215:360" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GLEvent.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../GL/Assets/GL/Scripts/EventSystems/GLEvent.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Single.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../GL/Assets/Plugins/UniRx/Scripts/Operators/Single.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Crypt.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/Crypt.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FloatProperty.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/FloatProperty.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
-              <folding>
-                <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
-                <marker date="1498064593000" expanded="true" signature="106:2330" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="110:164" ph="/// float型のデータを格納するクラス. ... " />
-                <marker date="1498064593000" expanded="true" signature="232:2328" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="287:1151" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="525:989" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="553:978" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1021:1144" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1049:1133" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1202:1304" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1504:2233" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1624:1742" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="49:2183" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="56:113" ph="/// UniRxイベントの基底クラス. ... " />
+                <marker date="1498150062000" expanded="true" signature="150:254" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="347:471" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="383:465" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="572:771" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="647:765" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="880:1156" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="996:1150" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="1273:1626" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="1430:1620" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="1751:2181" ph="{...}" />
+                <marker date="1498150062000" expanded="true" signature="1949:2175" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -113,6 +61,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../../GL/Assets/GL/Scripts/EventSystems/GLEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/HK/Framework/Scripts/EventSystems/GLEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/HK/Framework/Scripts/EventSystems/UniRxEvent.cs" />
       </list>
     </option>
   </component>
@@ -143,7 +93,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <PATH>
@@ -160,6 +109,7 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,7 +141,55 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
     <configuration default="true" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
     <configuration default="false" name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug">
@@ -212,12 +210,13 @@
       <option name="presentableId" value="Default" />
       <updated>1498064827856</updated>
       <workItem from="1498064831577" duration="603000" />
-      <workItem from="1498149579015" duration="83000" />
+      <workItem from="1498149579015" duration="271000" />
+      <workItem from="1498149976363" duration="130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="686000" />
+    <option name="totallyTimeSpent" value="1004000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -266,11 +265,32 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/EventSystems/UniRxEvent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1498150062000" expanded="true" signature="49:2183" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="56:113" ph="/// UniRxイベントの基底クラス. ... " />
+            <marker date="1498150062000" expanded="true" signature="150:254" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="347:471" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="383:465" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="572:771" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="647:765" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="880:1156" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="996:1150" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="1273:1626" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="1430:1620" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="1751:2181" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="1949:2175" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/StringAsset.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -278,12 +298,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
-            <marker date="1498064593000" expanded="true" signature="106:362" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="110:161" ph="/// DelayTimer抽象クラス. ... " />
-            <marker date="1498064593000" expanded="true" signature="215:360" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -291,7 +305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -299,7 +312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -307,7 +319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -315,7 +326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -323,12 +333,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
-            <marker date="1498064593000" expanded="true" signature="106:362" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="110:161" ph="/// DelayTimer抽象クラス. ... " />
-            <marker date="1498064593000" expanded="true" signature="215:360" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -336,7 +340,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -344,27 +347,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/FloatProperty.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+          <caret line="33" column="51" lean-forward="false" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/EventSystems/UniRxEvent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding>
-            <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
-            <marker date="1498064593000" expanded="true" signature="106:2330" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="110:164" ph="/// float型のデータを格納するクラス. ... " />
-            <marker date="1498064593000" expanded="true" signature="232:2328" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="287:1151" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="525:989" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="553:978" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1021:1144" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1049:1133" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1202:1304" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1504:2233" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1624:1742" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="49:2183" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="56:113" ph="/// UniRxイベントの基底クラス. ... " />
+            <marker date="1498150062000" expanded="true" signature="150:254" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="347:471" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="383:465" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="572:771" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="647:765" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="880:1156" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="996:1150" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="1273:1626" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="1430:1620" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="1751:2181" ph="{...}" />
+            <marker date="1498150062000" expanded="true" signature="1949:2175" ph="{...}" />
           </folding>
         </state>
       </provider>

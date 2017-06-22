@@ -1,18 +1,17 @@
-﻿using UnityEngine;
-using UniRx;
+﻿using UniRx;
 
-namespace HK.GL.Events
+namespace HK.Framework.EventSystems
 {
     /// <summary>
-    /// GLで扱うイベントの基底クラス.
+    /// UniRxイベントの基底クラス.
     /// </summary>
-    public abstract class GLEvent
+    public abstract class UniRxEvent
     {
         public static IMessageBroker GlobalBroker { get { return MessageBroker.Default; } }
     }
 
-    public abstract class GLEvent<E> : GLEvent
-        where E : GLEvent<E>, new()
+    public abstract class UniRxEvent<E> : UniRxEvent
+        where E : UniRxEvent<E>, new()
     {
         public static E Get()
         {
@@ -22,8 +21,8 @@ namespace HK.GL.Events
         }
     }
 
-    public abstract class GLEvent<E, P1> : GLEvent
-        where E : GLEvent<E, P1>, new()
+    public abstract class UniRxEvent<E, P1> : UniRxEvent
+        where E : UniRxEvent<E, P1>, new()
     {
         protected P1 param1;
 
@@ -36,8 +35,8 @@ namespace HK.GL.Events
         }
     }
 
-    public abstract class GLEvent<E, P1, P2> : GLEvent
-        where E : GLEvent<E, P1, P2>, new()
+    public abstract class UniRxEvent<E, P1, P2> : UniRxEvent
+        where E : UniRxEvent<E, P1, P2>, new()
     {
         protected P1 param1;
 
@@ -53,8 +52,8 @@ namespace HK.GL.Events
         }
     }
 
-    public abstract class GLEvent<E, P1, P2, P3> : GLEvent
-        where E : GLEvent<E, P1, P2, P3>, new()
+    public abstract class UniRxEvent<E, P1, P2, P3> : UniRxEvent
+        where E : UniRxEvent<E, P1, P2, P3>, new()
     {
         protected P1 param1;
 
@@ -73,8 +72,8 @@ namespace HK.GL.Events
         }
     }
 
-    public abstract class GLEvent<E, P1, P2, P3, P4> : GLEvent
-        where E : GLEvent<E, P1, P2, P3, P4>, new()
+    public abstract class UniRxEvent<E, P1, P2, P3, P4> : UniRxEvent
+        where E : UniRxEvent<E, P1, P2, P3, P4>, new()
     {
         protected P1 param1;
 
