@@ -2,71 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41779643-faca-4e21-8d1d-057cdf409701" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.unity/.idea/contentModel.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.unity/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.unity/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.unity/riderModule.iml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/ColorPropertyEditor.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/ColorPropertyEditor.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/ColorPropertyFinderAttribute.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/ColorPropertyFinderAttribute.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/EditorBase.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/EditorBase.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/EditorMonoBehaviour.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/EditorMonoBehaviour.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/EditorScriptableObject.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/EditorScriptableObject.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/FloatPropertyEditor.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/FloatPropertyEditor.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/FloatPropertyFinderAttribute.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/FloatPropertyFinderAttribute.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/ReorderComponentsEditorWindow.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/ReorderComponentsEditorWindow.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/StringAssetEditor.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/StringAssetEditor.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/StringAssetFinderAttribute.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Editor/StringAssetFinderAttribute.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/ColorProperty.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/ColorProperty.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/Crypt.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/Crypt.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/CsvParser.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/CsvParser.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/DelayTimer.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/DelayTimer.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/DelayTimerBase.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/DelayTimerBase.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/DelayTimerFloatProperty.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/DelayTimerFloatProperty.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/DontDestroyGameObject.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/DontDestroyGameObject.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/ExecuteEventsExtensions.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/ExecuteEventsExtensions.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/FloatProperty.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/FloatProperty.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/GameObjectExtensions.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/GameObjectExtensions.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/IReceivePreDestroyEvent.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/IReceivePreDestroyEvent.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/Input.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/Input.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/LayerMaskExtensions.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/LayerMaskExtensions.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/MathExtensions.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/MathExtensions.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/ObjectExtensions.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/ObjectExtensions.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/RectTransformUtilityExtensions.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/RectTransformUtilityExtensions.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/SaveData.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/SaveData.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/SingletonMonobehaviour.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/SingletonMonobehaviour.cs.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/StringAsset.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Framework/Scripts/StringAsset.cs.meta" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.unity/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.unity/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,50 +11,94 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="unity" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="StringAsset.cs" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="StringAsset.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/StringAsset.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1408">
+            <state relative-caret-position="165">
               <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DelayTimerBase.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/DelayTimerBase.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1498064593000" expanded="true" signature="6:115" ph="..." />
-                <marker date="1498064593000" expanded="true" signature="139:4858" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="143:191" ph="/// 文字列を管理するアセット. ... " />
-                <marker date="1498064593000" expanded="true" signature="278:4856" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="327:1267" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="567:667" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="705:1082" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1104:1163" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1117:1158" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1210:1263" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1312:1475" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1333:1423" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1538:1745" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1580:1650" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1687:1741" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1791:2454" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1874:1925" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1887:1920" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="1975:2203" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="2000:2198" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="2241:2450" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="2266:2445" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="2526:2575" ph="/* 検索用のディクショナリ. ... */" />
-                <marker date="1498064593000" expanded="true" signature="2645:2752" ph="/// 要素を取得する. ... " />
-                <marker date="1498064593000" expanded="true" signature="2787:3653" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="2890:2979" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="3734:4138" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="3965:4085" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="4004:4080" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="4093:4134" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="4198:4282" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="4334:4515" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="4525:4678" ph="/// string.Formatのラッピング. ... " />
-                <marker date="1498064593000" expanded="true" signature="4738:4790" ph="{...}" />
-                <marker date="1498064593000" expanded="true" signature="4811:4853" ph="{...}" />
+                <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
+                <marker date="1498064593000" expanded="true" signature="106:362" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="110:161" ph="/// DelayTimer抽象クラス. ... " />
+                <marker date="1498064593000" expanded="true" signature="215:360" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GLEvent.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../GL/Assets/GL/Scripts/EventSystems/GLEvent.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Single.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../GL/Assets/Plugins/UniRx/Scripts/Operators/Single.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Crypt.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/Crypt.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatProperty.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/FloatProperty.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+              <folding>
+                <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
+                <marker date="1498064593000" expanded="true" signature="106:2330" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="110:164" ph="/// float型のデータを格納するクラス. ... " />
+                <marker date="1498064593000" expanded="true" signature="232:2328" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="287:1151" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="525:989" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="553:978" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="1021:1144" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="1049:1133" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="1202:1304" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="1504:2233" ph="{...}" />
+                <marker date="1498064593000" expanded="true" signature="1624:1742" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -128,6 +108,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../../GL/Assets/GL/Scripts/EventSystems/GLEvent.cs" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -165,7 +152,7 @@
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="unity (2 projects)" />
+              <option name="myItemId" value="unity (4 projects)" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -177,6 +164,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -223,12 +211,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498064827856</updated>
-      <workItem from="1498064831577" duration="56000" />
+      <workItem from="1498064831577" duration="603000" />
+      <workItem from="1498149579015" duration="83000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56000" />
+    <option name="totallyTimeSpent" value="686000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -244,25 +233,25 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -279,44 +268,103 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/StringAsset.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1408">
+        <state relative-caret-position="165">
           <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/DelayTimerBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1498064593000" expanded="true" signature="6:115" ph="..." />
-            <marker date="1498064593000" expanded="true" signature="139:4858" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="143:191" ph="/// 文字列を管理するアセット. ... " />
-            <marker date="1498064593000" expanded="true" signature="278:4856" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="327:1267" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="567:667" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="705:1082" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1104:1163" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1117:1158" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1210:1263" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1312:1475" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1333:1423" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1538:1745" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1580:1650" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1687:1741" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1791:2454" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1874:1925" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1887:1920" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="1975:2203" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="2000:2198" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="2241:2450" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="2266:2445" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="2526:2575" ph="/* 検索用のディクショナリ. ... */" />
-            <marker date="1498064593000" expanded="true" signature="2645:2752" ph="/// 要素を取得する. ... " />
-            <marker date="1498064593000" expanded="true" signature="2787:3653" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="2890:2979" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="3734:4138" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="3965:4085" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="4004:4080" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="4093:4134" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="4198:4282" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="4334:4515" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="4525:4678" ph="/// string.Formatのラッピング. ... " />
-            <marker date="1498064593000" expanded="true" signature="4738:4790" ph="{...}" />
-            <marker date="1498064593000" expanded="true" signature="4811:4853" ph="{...}" />
+            <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
+            <marker date="1498064593000" expanded="true" signature="106:362" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="110:161" ph="/// DelayTimer抽象クラス. ... " />
+            <marker date="1498064593000" expanded="true" signature="215:360" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../GL/Assets/GL/Scripts/EventSystems/GLEvent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../GL/Assets/Plugins/UniRx/Scripts/Operators/Single.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/Crypt.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/StringAsset.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/DelayTimerBase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
+            <marker date="1498064593000" expanded="true" signature="106:362" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="110:161" ph="/// DelayTimer抽象クラス. ... " />
+            <marker date="1498064593000" expanded="true" signature="215:360" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../GL/Assets/GL/Scripts/EventSystems/GLEvent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../GL/Assets/Plugins/UniRx/Scripts/Operators/Single.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/HK/Framework/Scripts/FloatProperty.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+          <folding>
+            <marker date="1498064593000" expanded="false" signature="6:82" ph="..." />
+            <marker date="1498064593000" expanded="true" signature="106:2330" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="110:164" ph="/// float型のデータを格納するクラス. ... " />
+            <marker date="1498064593000" expanded="true" signature="232:2328" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="287:1151" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="525:989" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="553:978" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="1021:1144" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="1049:1133" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="1202:1304" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="1504:2233" ph="{...}" />
+            <marker date="1498064593000" expanded="true" signature="1624:1742" ph="{...}" />
           </folding>
         </state>
       </provider>
