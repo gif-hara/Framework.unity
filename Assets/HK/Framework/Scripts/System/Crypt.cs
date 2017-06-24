@@ -1,8 +1,5 @@
 ﻿using System.IO;
 using System.Security.Cryptography;
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace HK.Framework
 {
