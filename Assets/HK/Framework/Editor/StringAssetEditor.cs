@@ -2,8 +2,9 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
 using System.Collections.Generic;
+using HK.Framework.Text;
 
-namespace HK.Framework
+namespace HK.Framework.Editor.Text
 {
 	[CustomEditor(typeof(StringAsset))]
 	public class StringAssetEditor : EditorScriptableObject<StringAsset>

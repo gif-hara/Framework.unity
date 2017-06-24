@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using HK.Framework;
+using HK.Framework.Text;
 
 namespace HK.Framework.Test
 {

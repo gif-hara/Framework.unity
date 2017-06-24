@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-namespace HK.Framework
+namespace HK.Framework.Editor
 {
-	public abstract class EditorBase : Editor
+	public abstract class EditorBase : UnityEditor.Editor
 	{
 		/// <summary>
 		/// EditorGUILayoutのHorizontalのラッピング.

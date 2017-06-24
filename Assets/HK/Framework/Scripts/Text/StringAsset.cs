@@ -1,10 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System;
-using UnityEngine.Assertions;
 using System.Linq;
 
-namespace HK.Framework
+namespace HK.Framework.Text
 {
 	/// <summary>
 	/// 文字列を管理するアセット.

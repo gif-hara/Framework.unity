@@ -1,9 +1,6 @@
 using UnityEngine;
-using UnityEditor;
-using System.Collections;
-using System;
 
-namespace HK.Framework
+namespace HK.Framework.Editor
 {
 	public abstract class EditorMonoBehaviour<T> : EditorBase where T : MonoBehaviour
 	{

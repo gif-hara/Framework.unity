@@ -1,10 +1,10 @@
 ﻿#if UNITY_EDITOR
 using UnityEngine;
-using UnityEngine.Assertions;
 using System.Collections.Generic;
+using HK.Framework.Text;
 using UnityEditor;
 
-namespace HK.Framework
+namespace HK.Framework.Editor
 {
 	[CustomPropertyDrawer(typeof(StringAsset.Finder))]
 	public class StringAssetFinderDrawer : PropertyDrawer
