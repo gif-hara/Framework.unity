@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using UnityEngine;
 
-namespace HK.Framework
+namespace HK.Framework.System
 {
 	/// <summary>
 	/// Json形式でセーブできるクラスを提供します。

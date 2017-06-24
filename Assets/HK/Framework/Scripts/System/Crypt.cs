@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Security.Cryptography;
 
-namespace HK.Framework
+namespace HK.Framework.System
 {
 	/// <summary>
 	/// Crypt.

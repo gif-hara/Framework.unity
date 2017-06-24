@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections.Generic;
+using System;
 using System.Linq;
 
-namespace HK.Framework
+namespace HK.Framework.System
 {
 	/// <summary>
 	/// .
 	/// </summary>
 	public class CsvParser
 	{
-		public static List<T> Parse<T>(TextAsset textAsset, System.Func<List<string>, T> parser) where T : class
+		public static List<T> Parse<T>(TextAsset textAsset, Func<List<string>, T> parser) where T : class
 		{
 			Assert.IsNotNull(textAsset);
 			Assert.IsNotNull(parser);
