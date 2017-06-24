@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
-namespace HK.Framework.System
+namespace HK.Framework.Systems
 {
 	/// <summary>
 	/// .
