@@ -66,19 +66,6 @@ namespace HK.Framework.Text
 			{
 				return this.ToString().GetHashCode();
 			}
-
-			private static Dictionary<string, int> cachedHash = new Dictionary<string, int>();
-			public int GetHashCodeCache()
-			{
-				int hash;
-				if (!cachedHash.TryGetValue(this.ToString(), out hash))
-				{
-					hash = this.GetHashCode();
-					cachedHash.Add(this.ToString(), hash);
-				}
-
-				return hash;
-			}
 		}
 
 		[System.Serializable]
