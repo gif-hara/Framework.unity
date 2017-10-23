@@ -13,6 +13,9 @@ namespace HK.Framework.EventSystems
     public abstract class UniRxEvent<E> : UniRxEvent
         where E : UniRxEvent<E>, new()
     {
+        /// <summary>
+        /// イベントを取得します
+        /// </summary>
         public static E Get()
         {
             var result = new E();
@@ -23,7 +26,7 @@ namespace HK.Framework.EventSystems
         protected static E cache = new E();
 
         /// <summary>
-        /// <see cref="E"/>を取得します
+        /// キャッシュイベントを取得します
         /// </summary>
         /// <remarks>
         /// キャッシュを利用しているため<c>new</c>はしませんがスレッドセーフではありません
@@ -39,6 +42,9 @@ namespace HK.Framework.EventSystems
     {
         protected P1 param1;
 
+        /// <summary>
+        /// イベントを取得します
+        /// </summary>
         public static E Get(P1 param1)
         {
             var result = new E();
@@ -50,7 +56,7 @@ namespace HK.Framework.EventSystems
         protected static E cache = new E();
 
         /// <summary>
-        /// <see cref="E"/>を取得します
+        /// キャッシュイベントを取得します
         /// </summary>
         /// <remarks>
         /// キャッシュを利用しているため<c>new</c>はしませんがスレッドセーフではありません
@@ -69,6 +75,9 @@ namespace HK.Framework.EventSystems
 
         protected P2 param2;
 
+        /// <summary>
+        /// イベントを取得します
+        /// </summary>
         public static E Get(P1 param1, P2 param2)
         {
             var result = new E();
@@ -81,7 +90,7 @@ namespace HK.Framework.EventSystems
         protected static E cache = new E();
 
         /// <summary>
-        /// <see cref="E"/>を取得します
+        /// キャッシュイベントを取得します
         /// </summary>
         /// <remarks>
         /// キャッシュを利用しているため<c>new</c>はしませんがスレッドセーフではありません
@@ -103,6 +112,9 @@ namespace HK.Framework.EventSystems
 
         protected P3 param3;
 
+        /// <summary>
+        /// イベントを取得します
+        /// </summary>
         public static E Get(P1 param1, P2 param2, P3 param3)
         {
             var result = new E();
@@ -116,7 +128,7 @@ namespace HK.Framework.EventSystems
         protected static E cache = new E();
 
         /// <summary>
-        /// <see cref="E"/>を取得します
+        /// キャッシュイベントを取得します
         /// </summary>
         /// <remarks>
         /// キャッシュを利用しているため<c>new</c>はしませんがスレッドセーフではありません
@@ -141,6 +153,9 @@ namespace HK.Framework.EventSystems
 
         protected P4 param4;
 
+        /// <summary>
+        /// イベントを取得します
+        /// </summary>
         public static E Get(P1 param1, P2 param2, P3 param3, P4 param4)
         {
             var result = new E();
@@ -155,7 +170,7 @@ namespace HK.Framework.EventSystems
         protected static E cache = new E();
 
         /// <summary>
-        /// <see cref="E"/>を取得します
+        /// キャッシュイベントを取得します
         /// </summary>
         /// <remarks>
         /// キャッシュを利用しているため<c>new</c>はしませんがスレッドセーフではありません
