@@ -1,13 +1,10 @@
-﻿using UniRx;
-
-namespace HK.Framework.EventSystems
+﻿namespace HK.Framework.EventSystems
 {
     /// <summary>
     /// UniRxイベントの基底クラス.
     /// </summary>
     public abstract class UniRxEvent
     {
-        public static IMessageBroker GlobalBroker { get { return MessageBroker.Default; } }
     }
 
     public abstract class UniRxEvent<E> : UniRxEvent
