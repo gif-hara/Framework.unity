@@ -1,14 +1,14 @@
 ﻿namespace HK.Framework.EventSystems
 {
     /// <summary>
-    /// UniRxイベントの基底クラス.
+    /// <see cref="Broker"/>を介して通知されるイベント
     /// </summary>
-    public abstract class UniRxEvent
+    public abstract class Message
     {
     }
 
-    public abstract class UniRxEvent<E> : UniRxEvent
-        where E : UniRxEvent<E>, new()
+    public abstract class Message<E> : Message
+        where E : Message<E>, new()
     {
         protected static E cache = new E();
         
@@ -21,8 +21,8 @@
         }
     }
 
-    public abstract class UniRxEvent<E, P1> : UniRxEvent
-        where E : UniRxEvent<E, P1>, new()
+    public abstract class Message<E, P1> : Message
+        where E : Message<E, P1>, new()
     {
         protected P1 param1;
         
@@ -39,8 +39,8 @@
         }
     }
 
-    public abstract class UniRxEvent<E, P1, P2> : UniRxEvent
-        where E : UniRxEvent<E, P1, P2>, new()
+    public abstract class Message<E, P1, P2> : Message
+        where E : Message<E, P1, P2>, new()
     {
         protected P1 param1;
 
@@ -60,8 +60,8 @@
         }
     }
 
-    public abstract class UniRxEvent<E, P1, P2, P3> : UniRxEvent
-        where E : UniRxEvent<E, P1, P2, P3>, new()
+    public abstract class Message<E, P1, P2, P3> : Message
+        where E : Message<E, P1, P2, P3>, new()
     {
         protected P1 param1;
 
@@ -84,8 +84,8 @@
         }
     }
 
-    public abstract class UniRxEvent<E, P1, P2, P3, P4> : UniRxEvent
-        where E : UniRxEvent<E, P1, P2, P3, P4>, new()
+    public abstract class Message<E, P1, P2, P3, P4> : Message
+        where E : Message<E, P1, P2, P3, P4>, new()
     {
         protected P1 param1;
 
