@@ -17,6 +17,22 @@ namespace HK.Framework.EventSystems
         /// <summary>
         /// <see cref="GameObject"/>に紐づく<see cref="IMessageBroker"/>
         /// </summary>
-        public static readonly Dictionary<GameObject, IMessageBroker> GameObjects = new Dictionary<GameObject, IMessageBroker>();
+        private static readonly Dictionary<GameObject, IMessageBroker> gameObjectBrokers = new Dictionary<GameObject, IMessageBroker>();
+
+        /// <summary>
+        /// <paramref name="gameObject"/>に紐づく<see cref="IMessageBroker"/>を返す
+        /// </summary>
+        public static IMessageBroker GetGameObjectBroker(GameObject gameObject)
+        {
+            IMessageBroker broker;
+
+            if (!gameObjectBrokers.TryGetValue(gameObject, out broker))
+            {
+                broker = new MessageBroker();
+                gameObjectBrokers.Add(gameObject, broker);
+            }
+
+            return broker;
+        }
     }
 }
