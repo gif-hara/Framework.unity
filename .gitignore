@@ -26,5 +26,8 @@ ExportedObj/
 sysinfo.txt
 
 .idea*
+.vscode*
 Assets/Plugins/Editor/JetBrains*
 Assets/Plugins/UniRx*
+
+*.DS_Store*
