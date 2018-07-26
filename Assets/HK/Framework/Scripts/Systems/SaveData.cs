@@ -212,6 +212,28 @@ namespace HK.Framework.Systems
 			Savedatabase.Save();
 		}
 
+		/// <summary>
+		/// セーブデータのパスを返す
+		/// </summary>
+		public static string Path
+		{
+			get
+			{
+                return Savedatabase.Path;
+            }
+		}
+
+		/// <summary>
+		/// セーブデータのファイル名を返す
+		/// </summary>
+		public static string FileName
+		{
+			get
+			{
+                return Savedatabase.FileName;
+            }
+		}
+
 #endregion
 
 #region SaveDatabase Class

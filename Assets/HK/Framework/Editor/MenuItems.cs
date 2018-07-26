@@ -17,6 +17,12 @@ namespace HK.Framework.Editor
                 SaveData.Clear();
             }
         }
+
+        [MenuItem("HK/SaveData/View Path")]
+        private static void ViewPath()
+        {
+            EditorUtility.RevealInFinder(SaveData.Path);
+        }
     }
 }
 #endif
