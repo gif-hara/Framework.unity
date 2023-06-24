@@ -1,11 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using HK.Framework.UISystems;
 using UnityEngine;
 
 namespace HK.Framework
 {
     public class SetupData : ScriptableObject
     {
+        [SerializeField]
+        private UIManager uiManagerPrefab;
+
+        public UIManager UIManagerPrefab => uiManagerPrefab;
+
+#if UNITY_EDITOR
+        public void SetUIManagerPrefabEditor(UIManager uiManager)
+        {
+            uiManagerPrefab = uiManager;
+        }
+#endif
     }
 }
