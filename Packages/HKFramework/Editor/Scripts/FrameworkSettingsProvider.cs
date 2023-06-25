@@ -73,7 +73,8 @@ namespace HK.Framework.Editor
             var uiManager = new GameObject(
                 "UIManager",
                 typeof(UIManager)
-                );
+                )
+                .GetComponent<UIManager>();
 
             // カメラを作成して設定する
             var cameraObject = new GameObject(
@@ -122,8 +123,11 @@ namespace HK.Framework.Editor
                 typeof(InputSystemUIInputModule)
                 );
             eventSystemObject.transform.SetParent(uiManager.transform);
+            
+            uiManager.SetUICameraEditor(cameraObject);
+            uiManager.SetUIParentEditor(canvasRectTransform);
 
-            var result = PrefabUtility.SaveAsPrefabAsset(uiManager, "Assets/HKFramework/UIManager.prefab").GetComponent<UIManager>();
+            var result = PrefabUtility.SaveAsPrefabAsset(uiManager.gameObject, "Assets/HKFramework/UIManager.prefab").GetComponent<UIManager>();
 
             // 作成したゲームオブジェクトを削除する
             Object.DestroyImmediate(uiManager);
