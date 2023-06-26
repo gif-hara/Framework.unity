@@ -17,16 +17,7 @@ namespace HK.Framework.UISystems
         public static UIManager Instance { get; private set; }
 
         public static Camera UICamera => Instance.uiCamera;
-
-        public static async UniTask SetupAsync()
-        {
-            Assert.IsNull(Instance);
-
-            var prefab = await Resources.LoadAsync<UIManager>("UIManager");
-            Instance = Instantiate((UIManager)prefab);
-            DontDestroyOnLoad(Instance);
-        }
-
+        
         public static T Open<T>(T uiViewPrefab) where T : UIView
         {
             return Instantiate(uiViewPrefab, Instance.uiParent);

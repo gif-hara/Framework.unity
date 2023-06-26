@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using HK.Framework.UISystems;
 using UnityEngine;
 
 namespace HK.Framework.BootSystems
@@ -23,6 +24,15 @@ namespace HK.Framework.BootSystems
                 );
 
             IsReady = UniTask.CompletedTask;
+        }
+        
+        // UIManagerを生成する
+        private static UIManager CreateUIManager(SetupData setupData)
+        {
+            var uiManager = Object.Instantiate(setupData.UIManagerPrefab);
+            uiManager.transform.SetParent(null);
+            uiManager.gameObject.SetActive(true);
+            return uiManager;
         }
     }
 }
