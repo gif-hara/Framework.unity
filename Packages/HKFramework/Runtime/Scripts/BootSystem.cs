@@ -19,20 +19,19 @@ namespace HK.Framework.BootSystems
 
         private static async UniTask SetupInternal()
         {
+            var setupData = Resources.Load<SetupData>("SetupData");
             await UniTask.WhenAll(
+                CreateUIManagerAsync(setupData),
                 UniTask.DelayFrame(1)
                 );
 
             IsReady = UniTask.CompletedTask;
         }
         
-        // UIManagerを生成する
-        private static UIManager CreateUIManager(SetupData setupData)
+        private static UniTask CreateUIManagerAsync(SetupData setupData)
         {
-            var uiManager = Object.Instantiate(setupData.UIManagerPrefab);
-            uiManager.transform.SetParent(null);
-            uiManager.gameObject.SetActive(true);
-            return uiManager;
+            Object.Instantiate(setupData.UIManagerPrefab);
+            return UniTask.CompletedTask;
         }
     }
 }

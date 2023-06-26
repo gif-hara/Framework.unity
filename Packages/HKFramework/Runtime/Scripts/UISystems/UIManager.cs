@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -17,7 +18,12 @@ namespace HK.Framework.UISystems
         public static UIManager Instance { get; private set; }
 
         public static Camera UICamera => Instance.uiCamera;
-        
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+
         public static T Open<T>(T uiViewPrefab) where T : UIView
         {
             return Instantiate(uiViewPrefab, Instance.uiParent);

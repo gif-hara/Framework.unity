@@ -48,6 +48,7 @@ namespace HK.Framework.Editor
                     AssetDatabase.CreateAsset(setupData, "Assets/HKFramework/Resources/SetupData.asset");
 
                     setupData.SetUIManagerPrefabEditor(CreateDefaultUIManager());
+                    EditorUtility.SetDirty(setupData);
                     AssetDatabase.SaveAssets();
                     AssetDatabase.Refresh();
                 }
@@ -130,7 +131,7 @@ namespace HK.Framework.Editor
             var result = PrefabUtility.SaveAsPrefabAsset(uiManager.gameObject, "Assets/HKFramework/UIManager.prefab").GetComponent<UIManager>();
 
             // 作成したゲームオブジェクトを削除する
-            Object.DestroyImmediate(uiManager);
+            Object.DestroyImmediate(uiManager.gameObject);
 
             return result;
         }
