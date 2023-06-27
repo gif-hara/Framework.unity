@@ -1,13 +1,15 @@
 {
   "name": "com.hk.framework",
   "displayName": "HK Framework",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "unity": "2022.3",
   "description": "This is HK Framework",
   "author": {
     "name": "HK"
   },
-  "references": [
-    "com.cysharp.unitask"
-  ]
+  "dependencies": {
+    "com.cysharp.unitask": "2.3.3",
+    "com.cysharp.messagepipe": "1.7.4",
+    "com.unity.inputsystem": "1.6.1"
+  }
 }

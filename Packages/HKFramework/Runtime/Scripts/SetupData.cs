@@ -1,7 +1,7 @@
 using HK.Framework.UISystems;
 using UnityEngine;
 
-namespace HK.Framework
+namespace HK.Framework.BootSystems
 {
     public class SetupData : ScriptableObject
     {

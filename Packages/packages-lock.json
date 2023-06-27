@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.cysharp.messagepipe": {
+      "version": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5d3b2b8e06ba97a7e11525942b34e3247d1f0064"
+    },
     "com.cysharp.unitask": {
       "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
       "depth": 0,
@@ -11,7 +18,11 @@
       "version": "file:HKFramework",
       "depth": 0,
       "source": "embedded",
-      "dependencies": {}
+      "dependencies": {
+        "com.cysharp.unitask": "2.3.3",
+        "com.cysharp.messagepipe": "1.7.4",
+        "com.unity.inputsystem": "1.6.1"
+      }
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
