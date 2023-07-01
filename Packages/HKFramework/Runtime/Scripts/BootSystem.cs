@@ -14,7 +14,22 @@ namespace HK.Framework.BootSystems
     /// </summary>
     public static class BootSystem
     {
-        public static UniTask IsReady { get; private set; }
+        public static UniTask IsReady
+        {
+            get
+            {
+                return UniTask.WaitUntil(() => initializeState == InitializeState.Initialized);
+            }
+        }
+        
+        private enum InitializeState
+        {
+            None,
+            Initializing,
+            Initialized,
+        }
+        
+        private static InitializeState initializeState = InitializeState.None;
         
         public static event Func<UniTask> AdditionalSetupAsync;
         
@@ -23,11 +38,12 @@ namespace HK.Framework.BootSystems
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void InitializeOnBeforeSplashScreen()
         {
-            IsReady = SetupInternal();
+            SetupInternal().Forget();
         }
 
         private static async UniTask SetupInternal()
         {
+            initializeState = InitializeState.Initializing;
             var setupData = Resources.Load<SetupData>("SetupData");
             await UniTask.WhenAll(
                 CreateUIManagerAsync(setupData),
@@ -35,8 +51,7 @@ namespace HK.Framework.BootSystems
                 AdditionalSetupAsync?.Invoke() ?? UniTask.CompletedTask,
                 UniTask.DelayFrame(1)
                 );
-
-            IsReady = UniTask.CompletedTask;
+            initializeState = InitializeState.Initialized;
         }
         
         private static UniTask CreateUIManagerAsync(SetupData setupData)
