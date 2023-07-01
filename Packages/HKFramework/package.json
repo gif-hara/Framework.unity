@@ -10,6 +10,7 @@
   "dependencies": {
     "com.cysharp.unitask": "2.3.3",
     "com.cysharp.messagepipe": "1.7.4",
-    "com.unity.inputsystem": "1.6.1"
+    "com.unity.inputsystem": "1.6.1",
+    "com.unity.addressables": "1.21.14"
   }
 }
