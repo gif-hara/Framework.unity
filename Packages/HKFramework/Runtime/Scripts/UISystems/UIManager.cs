@@ -50,6 +50,13 @@ namespace HK.Framework.UISystems
         {
             uiView.transform.SetAsLastSibling();
         }
+        
+        public static Vector2 WorldToScreenPoint(Vector3 worldPosition, Camera worldCamera)
+        {
+            var screenPosition = RectTransformUtility.WorldToScreenPoint(worldCamera, worldPosition);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(Instance.uiParent, screenPosition, Instance.uiCamera, out var result);
+            return result;
+        }
 
 #if UNITY_EDITOR
         public void SetUIParentEditor(RectTransform uiParent)
