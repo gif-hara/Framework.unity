@@ -21,6 +21,8 @@ namespace HK.Framework.UISystems
 
         private void Awake()
         {
+            Assert.IsNull(Instance);
+            Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
 
