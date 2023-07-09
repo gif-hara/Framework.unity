@@ -40,7 +40,7 @@ namespace HK.Framework.TimeSystems
             }
             else
             {
-                return value * this.timeScale;
+                return UnityEngine.Time.timeScale * value * this.timeScale;
             }
         }
 
