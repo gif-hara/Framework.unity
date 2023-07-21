@@ -1,8 +1,11 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using HK.Framework.BootSystems;
 using HK.Framework.TimeSystems;
 using MessagePipe;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace HK.Framework.AnimationSystems
 {
@@ -11,7 +14,6 @@ namespace HK.Framework.AnimationSystems
     /// </summary>
     public sealed class AnimationController : MonoBehaviour
     {
-
         /// <summary>
         /// アニメーション再生完了タイプ
         /// </summary>
@@ -27,6 +29,8 @@ namespace HK.Framework.AnimationSystems
             /// </summary>
             Aborted,
         }
+        
+        public static RuntimeAnimatorController SharedController { set; get; }
 
         private const string OverrideClipAName = "ClipA";
 
@@ -52,12 +56,26 @@ namespace HK.Framework.AnimationSystems
         private AnimatorOverrideController overrideController;
 
         public TimeSystems.Time Time { set; get; } = TimeManager.Game;
-
-        private void Awake()
+        
+        private bool isInitialized;
+        
+        private void Initialize()
         {
+            if(this.isInitialized)
+            {
+                return;
+            }
+            
+            this.isInitialized = true;
+            Assert.IsNotNull(this.animator);
             this.overrideController = new AnimatorOverrideController();
-            this.overrideController.runtimeAnimatorController = this.animator.runtimeAnimatorController;
+            this.overrideController.runtimeAnimatorController = SharedController;
             this.animator.runtimeAnimatorController = this.overrideController;
+        }
+
+        private void Start()
+        {
+            this.Initialize();
         }
 
         private void OnDestroy()

@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using HK.Framework.AnimationSystems;
 using HK.Framework.MessageSystems;
 using HK.Framework.TimeSystems;
 using HK.Framework.UISystems;
@@ -53,23 +54,39 @@ namespace HK.Framework.BootSystems
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void InitializeOnBeforeSplashScreen()
         {
-            SetupInternal().Forget();
+            SetupInternalAsync().Forget();
         }
 
         /// <summary>
         /// セットアップの内部処理
         /// </summary>
-        private static async UniTask SetupInternal()
+        private static async UniTask SetupInternalAsync()
         {
             initializeState = InitializeState.Initializing;
             var setupData = Resources.Load<SetupData>("SetupData");
-            await UniTask.WhenAll(
-                CreateUIManagerAsync(setupData),
-                RegisterEvents(),
-                AdditionalSetupAsync?.Invoke() ?? UniTask.CompletedTask,
-                UniTask.DelayFrame(1)
-                );
+            // 即時でセットアップ
+            {
+                SetupAnimationSystems(setupData);
+            }
+            
+            // 非同期でセットアップ
+            {
+                await UniTask.WhenAll(
+                    CreateUIManagerAsync(setupData),
+                    RegisterEvents(),
+                    AdditionalSetupAsync?.Invoke() ?? UniTask.CompletedTask,
+                    UniTask.DelayFrame(1)
+                    );
+            }
             initializeState = InitializeState.Initialized;
+        }
+
+        /// <summary>
+        /// アニメーションシステムの設定
+        /// </summary>
+        private static void SetupAnimationSystems(SetupData setupData)
+        {
+            AnimationController.SharedController = setupData.RuntimeAnimatorController;
         }
         
         /// <summary>

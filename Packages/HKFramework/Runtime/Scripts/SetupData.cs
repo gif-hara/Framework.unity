@@ -1,5 +1,4 @@
 using HK.Framework.UISystems;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace HK.Framework.BootSystems
@@ -12,9 +11,9 @@ namespace HK.Framework.BootSystems
         public UIManager UIManagerPrefab => uiManagerPrefab;
         
         [SerializeField]
-        private AnimatorController animatorController;
+        private RuntimeAnimatorController runtimeAnimatorController;
         
-        public AnimatorController AnimatorController => animatorController;
+        public RuntimeAnimatorController RuntimeAnimatorController => runtimeAnimatorController;
 
 #if UNITY_EDITOR
         public void SetUIManagerPrefabEditor(UIManager uiManager)
@@ -22,9 +21,9 @@ namespace HK.Framework.BootSystems
             uiManagerPrefab = uiManager;
         }
         
-        public void SetAnimatorControllerEditor(AnimatorController animatorController)
+        public void SetAnimatorControllerEditor(RuntimeAnimatorController runtimeAnimatorController)
         {
-            this.animatorController = animatorController;
+            this.runtimeAnimatorController = runtimeAnimatorController;
         }
 #endif
     }
