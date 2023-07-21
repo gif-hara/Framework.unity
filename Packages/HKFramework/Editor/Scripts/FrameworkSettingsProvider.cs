@@ -35,24 +35,7 @@ namespace HK.Framework.Editor
             {
                 if (GUILayout.Button("Create SetupData"))
                 {
-                    // セットアップデータのScriptableObjectを生成してResourcesに配置する
-                    setupData = ScriptableObject.CreateInstance<SetupData>();
-                    // フォルダが無い場合は作成する
-                    if (!AssetDatabase.IsValidFolder("Assets/HKFramework"))
-                    {
-                        AssetDatabase.CreateFolder("Assets", "HKFramework");
-                    }
-                    if (!AssetDatabase.IsValidFolder("Assets/HKFramework/Resources"))
-                    {
-                        AssetDatabase.CreateFolder("Assets/HKFramework", "Resources");
-                    }
-                    AssetDatabase.CreateAsset(setupData, "Assets/HKFramework/Resources/SetupData.asset");
-
-                    setupData.SetUIManagerPrefabEditor(CreateDefaultUIManager());
-                    setupData.SetAnimatorControllerEditor(CreateDefaultAnimationData());
-                    EditorUtility.SetDirty(setupData);
-                    AssetDatabase.SaveAssets();
-                    AssetDatabase.Refresh();
+                    CreateSetupData();
                 }
                 return;
             }
@@ -68,10 +51,55 @@ namespace HK.Framework.Editor
                 }
                 EditorGUILayout.PropertyField(iterator, true);
             }
+            if (serializedObject.hasModifiedProperties)
+            {
+                serializedObject.ApplyModifiedProperties();
+            }
+            
+            if (GUILayout.Button("Recreate SetupData"))
+            {
+                CreateSetupData();
+            }
+        }
+
+        private static void CreateSetupData()
+        {
+            var path = "Assets/HKFramework/Resources/SetupData.asset";
+            var setupData = AssetDatabase.LoadAssetAtPath<SetupData>(path);
+            if (setupData == null)
+            {
+                // セットアップデータのScriptableObjectを生成してResourcesに配置する
+                setupData = ScriptableObject.CreateInstance<SetupData>();
+                // フォルダが無い場合は作成する
+                if (!AssetDatabase.IsValidFolder("Assets/HKFramework"))
+                {
+                    AssetDatabase.CreateFolder("Assets", "HKFramework");
+                }
+                if (!AssetDatabase.IsValidFolder("Assets/HKFramework/Resources"))
+                {
+                    AssetDatabase.CreateFolder("Assets/HKFramework", "Resources");
+                }
+                AssetDatabase.CreateAsset(setupData, "Assets/HKFramework/Resources/SetupData.asset");
+            }
+
+            setupData.SetUIManagerPrefabEditor(CreateDefaultUIManager());
+            setupData.SetAnimatorControllerEditor(CreateDefaultAnimationData());
+            EditorUtility.SetDirty(setupData);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
 
         private static UIManager CreateDefaultUIManager()
         {
+            const string path = "Assets/HKFramework/UIManager.prefab";
+
+            // すでにプロジェクトにUIManagerがある場合は作成しない
+            var result = AssetDatabase.LoadAssetAtPath<UIManager>(path);
+            if (result != null)
+            {
+                return result;
+            }
+            
             // ゲームオブジェクトを新規作成
             var uiManager = new GameObject(
                 "UIManager",
@@ -130,7 +158,7 @@ namespace HK.Framework.Editor
             uiManager.SetUICameraEditor(cameraObject);
             uiManager.SetUIParentEditor(canvasRectTransform);
 
-            var result = PrefabUtility.SaveAsPrefabAsset(uiManager.gameObject, "Assets/HKFramework/UIManager.prefab").GetComponent<UIManager>();
+            result = PrefabUtility.SaveAsPrefabAsset(uiManager.gameObject, "Assets/HKFramework/UIManager.prefab").GetComponent<UIManager>();
 
             // 作成したゲームオブジェクトを削除する
             Object.DestroyImmediate(uiManager.gameObject);
@@ -140,6 +168,15 @@ namespace HK.Framework.Editor
 
         private static AnimatorController CreateDefaultAnimationData()
         {
+            const string path = "Assets/HKFramework/Runtime.controller";
+            
+            // すでにプロジェクトにAnimatorControllerがある場合は作成しない
+            var result = AssetDatabase.LoadAssetAtPath<AnimatorController>(path);
+            if (result != null)
+            {
+                return result;
+            }
+            
             // BaseとClipAとClipBの3つのAnimationClipを作成する
             var baseClip = new AnimationClip();
             AssetDatabase.CreateAsset(baseClip, "Assets/HKFramework/Base.anim");
@@ -149,29 +186,29 @@ namespace HK.Framework.Editor
             AssetDatabase.CreateAsset(clipB, "Assets/HKFramework/ClipB.anim");
             
             // Runtimeという名前のAnimatorControllerを作成する
-            var controller = new AnimatorController();
-            AssetDatabase.CreateAsset(controller, "Assets/HKFramework/Runtime.controller");
+            result = new AnimatorController();
+            AssetDatabase.CreateAsset(result, path);
             // Base LayerとOverride Layer AとOverride Layer Bいう名前のレイヤーを作成する
-            controller.AddLayer("Base Layer");
-            controller.AddLayer("Override Layer A");
-            controller.AddLayer("Override Layer B");
+            result.AddLayer("Base Layer");
+            result.AddLayer("Override Layer A");
+            result.AddLayer("Override Layer B");
             
             // Base LayerにBaseという名前のステートを作成する
-            var baseState = controller.layers[0].stateMachine.AddState("Base");
+            var baseState = result.layers[0].stateMachine.AddState("Base");
             // BaseステートにbaseClipを設定する
-            controller.SetStateEffectiveMotion(baseState, baseClip);
+            result.SetStateEffectiveMotion(baseState, baseClip);
             
             // Override Layer AにOverride State Aという名前のステートを作成する
-            var clipAState = controller.layers[1].stateMachine.AddState("Override State A");
+            var clipAState = result.layers[1].stateMachine.AddState("Override State A");
             // Override State AステートにclipAを設定する
-            controller.SetStateEffectiveMotion(clipAState, clipA);
+            result.SetStateEffectiveMotion(clipAState, clipA);
             
             // Override Layer BにOverride State Bという名前のステートを作成する
-            var clipBState = controller.layers[2].stateMachine.AddState("Override State B");
+            var clipBState = result.layers[2].stateMachine.AddState("Override State B");
             // Override State BステートにclipBを設定する
-            controller.SetStateEffectiveMotion(clipBState, clipB);
+            result.SetStateEffectiveMotion(clipBState, clipB);
             
-            return controller;
+            return result;
         }
     }
 }
