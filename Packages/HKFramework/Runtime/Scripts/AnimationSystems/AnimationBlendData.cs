@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
-using UnityEngine.Assertions;
 
-namespace MH
+namespace HK.Framework.AnimationSystems
 {
     /// <summary>
     /// アニメーションブレンドに必要なデータ
