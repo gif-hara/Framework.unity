@@ -49,7 +49,7 @@ namespace HK.Framework.Editor
                     AssetDatabase.CreateAsset(setupData, "Assets/HKFramework/Resources/SetupData.asset");
 
                     setupData.SetUIManagerPrefabEditor(CreateDefaultUIManager());
-                    CreateDefaultAnimationData();
+                    setupData.SetAnimatorControllerEditor(CreateDefaultAnimationData());
                     EditorUtility.SetDirty(setupData);
                     AssetDatabase.SaveAssets();
                     AssetDatabase.Refresh();
@@ -138,7 +138,7 @@ namespace HK.Framework.Editor
             return result;
         }
 
-        private static void CreateDefaultAnimationData()
+        private static AnimatorController CreateDefaultAnimationData()
         {
             // BaseとClipAとClipBの3つのAnimationClipを作成する
             var baseClip = new AnimationClip();
@@ -170,6 +170,8 @@ namespace HK.Framework.Editor
             var clipBState = controller.layers[2].stateMachine.AddState("Override State B");
             // Override State BステートにclipBを設定する
             controller.SetStateEffectiveMotion(clipBState, clipB);
+            
+            return controller;
         }
     }
 }
