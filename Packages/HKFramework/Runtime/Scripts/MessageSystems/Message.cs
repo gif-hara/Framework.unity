@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using MessagePipe;
 
 namespace HK.Framework.MessageSystems
@@ -31,16 +32,16 @@ namespace HK.Framework.MessageSystems
                 .Publish(key, Get());
         }
 
-        public static void PublishAsync()
+        public static void PublishAsync(CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TMessage>()
-                .PublishAsync(Get());
+                .PublishAsync(Get(), cancellationToken);
         }
         
-        public static void PublishAsync<TKey>(TKey key)
+        public static void PublishAsync<TKey>(TKey key, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TKey, TMessage>()
-                .PublishAsync(key, Get());
+                .PublishAsync(key, Get(), cancellationToken);
         }
 
         public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
@@ -93,16 +94,16 @@ namespace HK.Framework.MessageSystems
                 .Publish(key, Get(param1));
         }
         
-        public static void PublishAsync(TParam1 param1)
+        public static void PublishAsync(TParam1 param1, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TMessage>()
-                .PublishAsync(Get(param1));
+                .PublishAsync(Get(param1), cancellationToken);
         }
         
-        public static void PublishAsync<TKey>(TKey key, TParam1 param1)
+        public static void PublishAsync<TKey>(TKey key, TParam1 param1, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TKey, TMessage>()
-                .PublishAsync(key, Get(param1));
+                .PublishAsync(key, Get(param1), cancellationToken);
         }
         
         public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
@@ -158,16 +159,16 @@ namespace HK.Framework.MessageSystems
                 .Publish(key, Get(param1, param2));
         }
         
-        public static void PublishAsync(TParam1 param1, TParam2 param2)
+        public static void PublishAsync(TParam1 param1, TParam2 param2, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TMessage>()
-                .PublishAsync(Get(param1, param2));
+                .PublishAsync(Get(param1, param2), cancellationToken);
         }
         
-        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2)
+        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TKey, TMessage>()
-                .PublishAsync(key, Get(param1, param2));
+                .PublishAsync(key, Get(param1, param2), cancellationToken);
         }
         
         public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
@@ -226,16 +227,16 @@ namespace HK.Framework.MessageSystems
                 .Publish(key, Get(param1, param2, param3));
         }
         
-        public static void PublishAsync(TParam1 param1, TParam2 param2, TParam3 param3)
+        public static void PublishAsync(TParam1 param1, TParam2 param2, TParam3 param3, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TMessage>()
-                .PublishAsync(Get(param1, param2, param3));
+                .PublishAsync(Get(param1, param2, param3), cancellationToken);
         }
         
-        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2, TParam3 param3)
+        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2, TParam3 param3, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TKey, TMessage>()
-                .PublishAsync(key, Get(param1, param2, param3));
+                .PublishAsync(key, Get(param1, param2, param3), cancellationToken);
         }
         
         public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
@@ -297,16 +298,16 @@ namespace HK.Framework.MessageSystems
                 .Publish(key, Get(param1, param2, param3, param4));
         }
         
-        public static void PublishAsync(TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        public static void PublishAsync(TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TMessage>()
-                .PublishAsync(Get(param1, param2, param3, param4));
+                .PublishAsync(Get(param1, param2, param3, param4), cancellationToken);
         }
         
-        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4, CancellationToken cancellationToken = default)
         {
             MessageBroker.GetAsyncPublisher<TKey, TMessage>()
-                .PublishAsync(key, Get(param1, param2, param3, param4));
+                .PublishAsync(key, Get(param1, param2, param3, param4), cancellationToken);
         }
         
         public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
