@@ -19,10 +19,10 @@ namespace HK.Framework.TimeSystems
             set
             {
                 this._timeScale = value;
-                TimeEvents.UpdatedTimeScale.Publish(this);
+                TimeEvents.UpdatedTimeScale.PublishWithKey(this);
                 foreach (var child in this.children)
                 {
-                    TimeEvents.UpdatedTimeScale.Publish(child);
+                    TimeEvents.UpdatedTimeScale.PublishWithKey(child);
                 }
             }
             get => this._timeScale;
