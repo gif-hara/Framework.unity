@@ -1,3 +1,6 @@
+using System;
+using MessagePipe;
+
 namespace HK.Framework.MessageSystems
 {
     /// <summary>
@@ -11,9 +14,57 @@ namespace HK.Framework.MessageSystems
     {
         private static TMessage instance = new();
         
-        public static TMessage Get()
+        private static TMessage Get()
         {
             return instance;
+        }
+
+        public static void Publish()
+        {
+            MessageBroker.GetPublisher<TMessage>()
+                .Publish(Get());
+        }
+
+        public static void Publish<TKey>(TKey key)
+        {
+            MessageBroker.GetPublisher<TKey, TMessage>()
+                .Publish(key, Get());
+        }
+
+        public static void PublishAsync()
+        {
+            MessageBroker.GetAsyncPublisher<TMessage>()
+                .PublishAsync(Get());
+        }
+        
+        public static void PublishAsync<TKey>(TKey key)
+        {
+            MessageBroker.GetAsyncPublisher<TKey, TMessage>()
+                .PublishAsync(key, Get());
+        }
+
+        public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TMessage>()
+                .Subscribe(handler, filters);
+        }
+        
+        public static IDisposable Subscribe<TKey>(TKey key, IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TKey, TMessage>()
+                .Subscribe(key, handler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync(IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TMessage>()
+                .Subscribe(asyncHandler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync<TKey>(TKey key, IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TKey, TMessage>()
+                .Subscribe(key, asyncHandler, filters);
         }
     }
 
@@ -28,6 +79,54 @@ namespace HK.Framework.MessageSystems
             instance.Param1 = param1;
 
             return instance;
+        }
+        
+        public static void Publish(TParam1 param1)
+        {
+            MessageBroker.GetPublisher<TMessage>()
+                .Publish(Get(param1));
+        }
+        
+        public static void Publish<TKey>(TKey key, TParam1 param1)
+        {
+            MessageBroker.GetPublisher<TKey, TMessage>()
+                .Publish(key, Get(param1));
+        }
+        
+        public static void PublishAsync(TParam1 param1)
+        {
+            MessageBroker.GetAsyncPublisher<TMessage>()
+                .PublishAsync(Get(param1));
+        }
+        
+        public static void PublishAsync<TKey>(TKey key, TParam1 param1)
+        {
+            MessageBroker.GetAsyncPublisher<TKey, TMessage>()
+                .PublishAsync(key, Get(param1));
+        }
+        
+        public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TMessage>()
+                .Subscribe(handler, filters);
+        }
+        
+        public static IDisposable Subscribe<TKey>(TKey key, IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TKey, TMessage>()
+                .Subscribe(key, handler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync(IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TMessage>()
+                .Subscribe(asyncHandler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync<TKey>(TKey key, IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TKey, TMessage>()
+                .Subscribe(key, asyncHandler, filters);
         }
     }
 
@@ -45,6 +144,54 @@ namespace HK.Framework.MessageSystems
             instance.Param2 = param2;
 
             return instance;
+        }
+        
+        public static void Publish(TParam1 param1, TParam2 param2)
+        {
+            MessageBroker.GetPublisher<TMessage>()
+                .Publish(Get(param1, param2));
+        }
+        
+        public static void Publish<TKey>(TKey key, TParam1 param1, TParam2 param2)
+        {
+            MessageBroker.GetPublisher<TKey, TMessage>()
+                .Publish(key, Get(param1, param2));
+        }
+        
+        public static void PublishAsync(TParam1 param1, TParam2 param2)
+        {
+            MessageBroker.GetAsyncPublisher<TMessage>()
+                .PublishAsync(Get(param1, param2));
+        }
+        
+        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2)
+        {
+            MessageBroker.GetAsyncPublisher<TKey, TMessage>()
+                .PublishAsync(key, Get(param1, param2));
+        }
+        
+        public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TMessage>()
+                .Subscribe(handler, filters);
+        }
+        
+        public static IDisposable Subscribe<TKey>(TKey key, IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TKey, TMessage>()
+                .Subscribe(key, handler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync(IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TMessage>()
+                .Subscribe(asyncHandler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync<TKey>(TKey key, IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TKey, TMessage>()
+                .Subscribe(key, asyncHandler, filters);
         }
     }
 
@@ -65,6 +212,54 @@ namespace HK.Framework.MessageSystems
             instance.Param3 = param3;
 
             return instance;
+        }
+        
+        public static void Publish(TParam1 param1, TParam2 param2, TParam3 param3)
+        {
+            MessageBroker.GetPublisher<TMessage>()
+                .Publish(Get(param1, param2, param3));
+        }
+        
+        public static void Publish<TKey>(TKey key, TParam1 param1, TParam2 param2, TParam3 param3)
+        {
+            MessageBroker.GetPublisher<TKey, TMessage>()
+                .Publish(key, Get(param1, param2, param3));
+        }
+        
+        public static void PublishAsync(TParam1 param1, TParam2 param2, TParam3 param3)
+        {
+            MessageBroker.GetAsyncPublisher<TMessage>()
+                .PublishAsync(Get(param1, param2, param3));
+        }
+        
+        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2, TParam3 param3)
+        {
+            MessageBroker.GetAsyncPublisher<TKey, TMessage>()
+                .PublishAsync(key, Get(param1, param2, param3));
+        }
+        
+        public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TMessage>()
+                .Subscribe(handler, filters);
+        }
+        
+        public static IDisposable Subscribe<TKey>(TKey key, IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TKey, TMessage>()
+                .Subscribe(key, handler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync(IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TMessage>()
+                .Subscribe(asyncHandler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync<TKey>(TKey key, IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TKey, TMessage>()
+                .Subscribe(key, asyncHandler, filters);
         }
     }
 
@@ -88,6 +283,54 @@ namespace HK.Framework.MessageSystems
             instance.Param4 = param4;
 
             return instance;
+        }
+        
+        public static void Publish(TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        {
+            MessageBroker.GetPublisher<TMessage>()
+                .Publish(Get(param1, param2, param3, param4));
+        }
+        
+        public static void Publish<TKey>(TKey key, TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        {
+            MessageBroker.GetPublisher<TKey, TMessage>()
+                .Publish(key, Get(param1, param2, param3, param4));
+        }
+        
+        public static void PublishAsync(TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        {
+            MessageBroker.GetAsyncPublisher<TMessage>()
+                .PublishAsync(Get(param1, param2, param3, param4));
+        }
+        
+        public static void PublishAsync<TKey>(TKey key, TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        {
+            MessageBroker.GetAsyncPublisher<TKey, TMessage>()
+                .PublishAsync(key, Get(param1, param2, param3, param4));
+        }
+        
+        public static IDisposable Subscribe(IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TMessage>()
+                .Subscribe(handler, filters);
+        }
+        
+        public static IDisposable Subscribe<TKey>(TKey key, IMessageHandler<TMessage> handler, params MessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetSubscriber<TKey, TMessage>()
+                .Subscribe(key, handler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync(IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TMessage>()
+                .Subscribe(asyncHandler, filters);
+        }
+        
+        public static IDisposable SubscribeAsync<TKey>(TKey key, IAsyncMessageHandler<TMessage> asyncHandler, params AsyncMessageHandlerFilter<TMessage>[] filters)
+        {
+            return MessageBroker.GetAsyncSubscriber<TKey, TMessage>()
+                .Subscribe(key, asyncHandler, filters);
         }
     }
 }

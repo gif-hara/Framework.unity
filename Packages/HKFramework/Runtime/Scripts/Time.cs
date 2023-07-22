@@ -19,12 +19,10 @@ namespace HK.Framework.TimeSystems
             set
             {
                 this._timeScale = value;
-                MessageBroker.GetPublisher<Time, TimeEvents.UpdatedTimeScale>()
-                    .Publish(this, TimeEvents.UpdatedTimeScale.Get());
+                TimeEvents.UpdatedTimeScale.Publish(this);
                 foreach (var child in this.children)
                 {
-                    MessageBroker.GetPublisher<Time, TimeEvents.UpdatedTimeScale>()
-                        .Publish(child, TimeEvents.UpdatedTimeScale.Get());
+                    TimeEvents.UpdatedTimeScale.Publish(child);
                 }
             }
             get => this._timeScale;
