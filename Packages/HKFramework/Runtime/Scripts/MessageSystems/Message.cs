@@ -74,7 +74,7 @@ namespace HK.Framework.MessageSystems
         
         protected TParam1 Param1 { get; set; }
 
-        public static TMessage Get(TParam1 param1)
+        private static TMessage Get(TParam1 param1)
         {
             instance.Param1 = param1;
 
@@ -138,7 +138,7 @@ namespace HK.Framework.MessageSystems
         
         protected TParam2 Param2 { get; set; }
 
-        public static TMessage Get(TParam1 param1, TParam2 param2)
+        private static TMessage Get(TParam1 param1, TParam2 param2)
         {
             instance.Param1 = param1;
             instance.Param2 = param2;
@@ -205,7 +205,7 @@ namespace HK.Framework.MessageSystems
 
         protected TParam3 Param3 { get; set; }
 
-        public static TMessage Get(TParam1 param1, TParam2 param2, TParam3 param3)
+        private static TMessage Get(TParam1 param1, TParam2 param2, TParam3 param3)
         {
             instance.Param1 = param1;
             instance.Param2 = param2;
@@ -275,7 +275,7 @@ namespace HK.Framework.MessageSystems
 
         protected TParam4 Param4 { get; set; }
 
-        public static TMessage Get(TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
+        private static TMessage Get(TParam1 param1, TParam2 param2, TParam3 param3, TParam4 param4)
         {
             instance.Param1 = param1;
             instance.Param2 = param2;
