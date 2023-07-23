@@ -2,6 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Linq;
 using Cysharp.Threading.Tasks.Triggers;
+using HK.Framework.TimeSystems;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -53,7 +54,7 @@ namespace HK.Framework.AudioSystems
             Instance.fadeStream = Instance.GetAsyncUpdateTrigger()
                 .Subscribe(_ =>
                 {
-                    time += Time.deltaTime;
+                    time += TimeManager.Game.deltaTime;
                     Instance.bgmSource.volume = Mathf.Lerp(original, to, time / duration);
                     if (time >= duration)
                     {

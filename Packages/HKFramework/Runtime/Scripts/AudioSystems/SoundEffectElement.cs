@@ -11,8 +11,6 @@ namespace HK.Framework.AudioSystems
 
         public UniTask PlayAsync(AudioData data)
         {
-            this.audioSource.volume = UnityEngine.Random.Range(data.volumeMin, data.volumeMax);
-            this.audioSource.pitch = UnityEngine.Random.Range(data.pitchMin, data.pitchMax);
             this.audioSource.PlayOneShot(data.clip);
             return UniTask.WaitUntil(() => !this.audioSource.isPlaying, cancellationToken:this.GetCancellationTokenOnDestroy());
         }
@@ -26,10 +24,6 @@ namespace HK.Framework.AudioSystems
         public class AudioData
         {
             public AudioClip clip;
-            public float volumeMin = 1.0f;
-            public float volumeMax = 1.0f;
-            public float pitchMin = 1.0f;
-            public float pitchMax = 1.0f;
         }
     }
 }
