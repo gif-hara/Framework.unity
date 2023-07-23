@@ -2,7 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Unity1Week0619
+namespace HK.Framework.AudioSystems
 {
     public class SoundEffectElement : MonoBehaviour
     {
