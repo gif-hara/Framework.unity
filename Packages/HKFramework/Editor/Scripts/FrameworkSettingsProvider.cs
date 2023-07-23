@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using HK.Framework.AudioSystems;
 using HK.Framework.BootSystems;
 using HK.Framework.UISystems;
 using UnityEditor;
@@ -84,6 +85,7 @@ namespace HK.Framework.Editor
 
             setupData.SetUIManagerPrefabEditor(CreateDefaultUIManager());
             setupData.SetAnimatorControllerEditor(CreateDefaultAnimationData());
+            setupData.SetAudioManagerPrefabEditor(CreateDefaultAudioManager());
             EditorUtility.SetDirty(setupData);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -208,6 +210,71 @@ namespace HK.Framework.Editor
             // Override State BステートにclipBを設定する
             result.SetStateEffectiveMotion(clipBState, clipB);
             
+            return result;
+        }
+
+        private static AudioManager CreateDefaultAudioManager()
+        {
+            const string path = "Assets/HKFramework/AudioManager.prefab";
+            
+            // すでにプロジェクトにAudioManagerがある場合は作成しない
+            var result = AssetDatabase.LoadAssetAtPath<AudioManager>(path);
+            if (result != null)
+            {
+                return result;
+            }
+            
+            // ゲームオブジェクトを新規作成
+            var audioManager = new GameObject(
+                "AudioManager",
+                typeof(AudioManager)
+                )
+                .GetComponent<AudioManager>();
+            var bgmSource = new GameObject(
+                "BGMSource",
+                typeof(AudioSource)
+                )
+                .GetComponent<AudioSource>();
+            bgmSource.transform.SetParent(audioManager.transform);
+            audioManager.SetBGMSource(bgmSource);
+            audioManager.SetSoundEffectElementPrefab(CreateDefaultSoundEffectElement());
+            
+            result = PrefabUtility.SaveAsPrefabAsset(audioManager.gameObject, path).GetComponent<AudioManager>();
+            // audioManager.gameObjectを削除する
+            Object.DestroyImmediate(audioManager.gameObject);
+
+            return result;
+        }
+        
+        private static SoundEffectElement CreateDefaultSoundEffectElement()
+        {
+            const string path = "Assets/HKFramework/SoundEffectElement.prefab";
+            
+            // すでにプロジェクトにSoundEffectElementがある場合は作成しない
+            var result = AssetDatabase.LoadAssetAtPath<SoundEffectElement>(path);
+            if (result != null)
+            {
+                return result;
+            }
+            
+            // ゲームオブジェクトを新規作成
+            var soundEffectElement = new GameObject(
+                "SoundEffectElement",
+                typeof(SoundEffectElement)
+                )
+                .GetComponent<SoundEffectElement>();
+            var audioSource = new GameObject(
+                "AudioSource",
+                typeof(AudioSource)
+                )
+                .GetComponent<AudioSource>();
+            audioSource.transform.SetParent(soundEffectElement.transform);
+            soundEffectElement.SetAudioSource(audioSource);
+            
+            result = PrefabUtility.SaveAsPrefabAsset(soundEffectElement.gameObject, path).GetComponent<SoundEffectElement>();
+            // soundEffectElement.gameObjectを削除する
+            Object.DestroyImmediate(soundEffectElement.gameObject);
+
             return result;
         }
     }

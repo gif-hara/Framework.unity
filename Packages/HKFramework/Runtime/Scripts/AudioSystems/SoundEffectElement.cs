@@ -25,5 +25,12 @@ namespace HK.Framework.AudioSystems
         {
             public AudioClip clip;
         }
+        
+#if UNITY_EDITOR
+        public void SetAudioSource(AudioSource audioSource)
+        {
+            this.audioSource = audioSource;
+        }
+#endif
     }
 }

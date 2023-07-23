@@ -23,26 +23,23 @@ namespace HK.Framework.AudioSystems
 
         public static AudioManager Instance { get; private set; }
 
+        private void Awake()
+        {
+            Assert.IsNull(Instance);
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+        
         private void OnDestroy()
         {
             this.fadeStream?.Dispose();
         }
-
-        public static async UniTask SetupAsync()
-        {
-            Assert.IsNull(Instance);
-
-            var prefab = await Resources.LoadAsync<AudioManager>("AudioManager");
-            Instance = Instantiate((AudioManager)prefab);
-            DontDestroyOnLoad(Instance);
-        }
-
+        
         public static void PlayBGM(AudioClip clip)
         {
             Instance.fadeStream?.Dispose();
             Instance.bgmSource.clip = clip;
             Instance.bgmSource.loop = true;
-            Instance.bgmSource.volume = 0.15f;
             Instance.bgmSource.Play();
         }
 
@@ -75,5 +72,17 @@ namespace HK.Framework.AudioSystems
         {
             PlaySEAsync(data).Forget();
         }
+        
+#if UNITY_EDITOR
+        public void SetBGMSource(AudioSource source)
+        {
+            this.bgmSource = source;
+        }
+        
+        public void SetSoundEffectElementPrefab(SoundEffectElement prefab)
+        {
+            this.soundEffectElementPrefab = prefab;
+        }
+#endif
     }
 }

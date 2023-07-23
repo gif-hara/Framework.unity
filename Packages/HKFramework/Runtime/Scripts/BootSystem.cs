@@ -73,6 +73,7 @@ namespace HK.Framework.BootSystems
             {
                 await UniTask.WhenAll(
                     CreateUIManagerAsync(setupData),
+                    CreateAudioManagerAsync(setupData),
                     RegisterEvents(),
                     AdditionalSetupAsync?.Invoke() ?? UniTask.CompletedTask,
                     UniTask.DelayFrame(1)
@@ -98,6 +99,12 @@ namespace HK.Framework.BootSystems
             return UniTask.CompletedTask;
         }
         
+        private static UniTask CreateAudioManagerAsync(SetupData setupData)
+        {
+            Object.Instantiate(setupData.AudioManagerPrefab);
+            return UniTask.CompletedTask;
+        }
+
         /// <summary>
         /// イベントの登録を行う
         /// </summary>
