@@ -8,22 +8,18 @@ namespace HK.Framework.AudioSystems
     {
         [SerializeField]
         private AudioSource audioSource;
+        
+        public AudioSource AudioSource => audioSource;
 
-        public UniTask PlayAsync(AudioData data)
+        public UniTask PlayAsync(AudioClip clip)
         {
-            this.audioSource.PlayOneShot(data.clip);
+            this.audioSource.PlayOneShot(clip);
             return UniTask.WaitUntil(() => !this.audioSource.isPlaying, cancellationToken:this.GetCancellationTokenOnDestroy());
         }
 
-        public void Play(AudioData data)
+        public void Play(AudioClip clip)
         {
-            this.PlayAsync(data).Forget();
-        }
-
-        [Serializable]
-        public class AudioData
-        {
-            public AudioClip clip;
+            this.PlayAsync(clip).Forget();
         }
         
 #if UNITY_EDITOR

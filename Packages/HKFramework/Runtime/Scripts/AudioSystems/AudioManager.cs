@@ -22,6 +22,8 @@ namespace HK.Framework.AudioSystems
         private IDisposable fadeStream;
 
         public static AudioManager Instance { get; private set; }
+        
+        public static AudioSource BGMSource => Instance.bgmSource;
 
         private void Awake()
         {
@@ -61,16 +63,17 @@ namespace HK.Framework.AudioSystems
                 });
         }
 
-        public static async UniTask PlaySEAsync(SoundEffectElement.AudioData data)
+        public static async UniTask PlaySEAsync(AudioClip clip, Action<SoundEffectElement> onCreatedAction = null)
         {
             var element = Instantiate(Instance.soundEffectElementPrefab, Instance.transform);
-            await element.PlayAsync(data);
+            onCreatedAction?.Invoke(element);
+            await element.PlayAsync(clip);
             Destroy(element.gameObject);
         }
 
-        public static void PlaySE(SoundEffectElement.AudioData data)
+        public static void PlaySE(AudioClip clip, Action<SoundEffectElement> onCreated = null)
         {
-            PlaySEAsync(data).Forget();
+            PlaySEAsync(clip, onCreated).Forget();
         }
         
 #if UNITY_EDITOR
