@@ -65,7 +65,7 @@ namespace HK.Framework.AudioSystems
 
         public static async UniTask PlaySEAsync(AudioClip clip, Action<SoundEffectElement> onCreatedAction = null)
         {
-            var element = Instantiate(Instance.soundEffectElementPrefab, Instance.transform);
+            var element = CreateSoundEffectElement();
             onCreatedAction?.Invoke(element);
             await element.PlayAsync(clip);
             Destroy(element.gameObject);
@@ -74,6 +74,11 @@ namespace HK.Framework.AudioSystems
         public static void PlaySE(AudioClip clip, Action<SoundEffectElement> onCreated = null)
         {
             PlaySEAsync(clip, onCreated).Forget();
+        }
+        
+        public static SoundEffectElement CreateSoundEffectElement()
+        {
+            return Instantiate(Instance.soundEffectElementPrefab, Instance.transform);
         }
         
 #if UNITY_EDITOR
