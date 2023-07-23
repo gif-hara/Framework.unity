@@ -88,6 +88,8 @@ namespace HK.Framework.AnimationSystems
         /// </summary>
         public void Play(AnimationClip clip, float blendSeconds = 0.0f)
         {
+            this.Initialize();
+            
             // 前回のアニメーション処理を終了させる
             this.animationCancelToken?.Dispose();
             this.animationCancelToken = new CancellationTokenDisposable();
