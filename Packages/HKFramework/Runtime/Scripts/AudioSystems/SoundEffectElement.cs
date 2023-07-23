@@ -13,7 +13,8 @@ namespace HK.Framework.AudioSystems
 
         public UniTask PlayAsync(AudioClip clip)
         {
-            this.audioSource.PlayOneShot(clip);
+            this.audioSource.clip = clip;
+            this.audioSource.Play();
             return UniTask.WaitUntil(() => !this.audioSource.isPlaying, cancellationToken:this.GetCancellationTokenOnDestroy());
         }
 
