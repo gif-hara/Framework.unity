@@ -5,6 +5,7 @@ using HK.Framework.UISystems;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
@@ -230,14 +231,21 @@ namespace HK.Framework.Editor
                 typeof(AudioManager)
                 )
                 .GetComponent<AudioManager>();
-            var audioSource = new GameObject(
-                "AudioSource",
+            var bgmSource = new GameObject(
+                "BGMSource",
                 typeof(AudioSource)
                 )
                 .GetComponent<AudioSource>();
-            audioSource.transform.SetParent(audioManager.transform);
-            audioManager.SetAudioSource(audioSource);
-            
+            bgmSource.transform.SetParent(audioManager.transform);
+            audioManager.SetBGMSource(bgmSource);
+            var seSource = new GameObject(
+                "SESource",
+                typeof(AudioSource)
+                )
+                .GetComponent<AudioSource>();
+            seSource.transform.SetParent(audioManager.transform);
+            audioManager.SetSESource(seSource);
+
             result = PrefabUtility.SaveAsPrefabAsset(audioManager.gameObject, path).GetComponent<AudioManager>();
             // audioManager.gameObjectを削除する
             Object.DestroyImmediate(audioManager.gameObject);

@@ -15,7 +15,10 @@ namespace HK.Framework.AudioSystems
     public class AudioManager : MonoBehaviour
     {
         [SerializeField]
-        private AudioSource audioSource;
+        private AudioSource bgmSource;
+        
+        [SerializeField]
+        private AudioSource seSource;
 
         private readonly Dictionary<AudioClip, SortedList<int, SoundEffectData>> soundEffectData = new();
 
@@ -23,7 +26,7 @@ namespace HK.Framework.AudioSystems
 
         public static AudioManager Instance { get; private set; }
         
-        public static AudioSource AudioSource => Instance.audioSource;
+        public static AudioSource SeSource => Instance.seSource;
 
         private void Awake()
         {
@@ -40,24 +43,24 @@ namespace HK.Framework.AudioSystems
         public static void PlayBGM(AudioClip clip)
         {
             Instance.fadeStream?.Dispose();
-            Instance.audioSource.clip = clip;
-            Instance.audioSource.loop = true;
-            Instance.audioSource.Play();
+            Instance.bgmSource.clip = clip;
+            Instance.bgmSource.loop = true;
+            Instance.bgmSource.Play();
         }
 
         public static void FadeBGM(float duration, float to)
         {
             Instance.fadeStream?.Dispose();
-            var original = Instance.audioSource.volume;
+            var original = Instance.bgmSource.volume;
             var time = 0.0f;
             Instance.fadeStream = Instance.GetAsyncUpdateTrigger()
                 .Subscribe(_ =>
                 {
                     time += TimeManager.Game.deltaTime;
-                    Instance.audioSource.volume = Mathf.Lerp(original, to, time / duration);
+                    Instance.bgmSource.volume = Mathf.Lerp(original, to, time / duration);
                     if (time >= duration)
                     {
-                        Instance.audioSource.volume = to;
+                        Instance.bgmSource.volume = to;
                         Instance.fadeStream.Dispose();
                     }
                 });
@@ -71,7 +74,7 @@ namespace HK.Framework.AudioSystems
             }
             else
             {
-                Instance.audioSource.PlayOneShot(clip, volumeScale);
+                Instance.seSource.PlayOneShot(clip, volumeScale);
             }
         }
 
@@ -85,7 +88,7 @@ namespace HK.Framework.AudioSystems
             var data = list.Values[0];
             list.RemoveAt(0);
             
-            Instance.audioSource.PlayOneShot(clip, data.volumeScale);
+            Instance.seSource.PlayOneShot(clip, data.volumeScale);
             await UniTask.Delay(TimeSpan.FromSeconds(clip.length), cancellationToken: Instance.GetCancellationTokenOnDestroy());
             list.Add(data.index, data);
         }
@@ -145,9 +148,14 @@ namespace HK.Framework.AudioSystems
         }
         
 #if UNITY_EDITOR
-        public void SetAudioSource(AudioSource source)
+        public void SetBGMSource(AudioSource source)
         {
-            this.audioSource = source;
+            this.bgmSource = source;
+        }
+        
+        public void SetSESource(AudioSource source)
+        {
+            this.seSource = source;
         }
 #endif
     }
