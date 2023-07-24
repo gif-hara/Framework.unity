@@ -230,13 +230,13 @@ namespace HK.Framework.Editor
                 typeof(AudioManager)
                 )
                 .GetComponent<AudioManager>();
-            var bgmSource = new GameObject(
-                "BGMSource",
+            var audioSource = new GameObject(
+                "AudioSource",
                 typeof(AudioSource)
                 )
                 .GetComponent<AudioSource>();
-            bgmSource.transform.SetParent(audioManager.transform);
-            audioManager.SetBGMSource(bgmSource);
+            audioSource.transform.SetParent(audioManager.transform);
+            audioManager.SetAudioSource(audioSource);
             audioManager.SetSoundEffectElementPrefab(CreateDefaultSoundEffectElement());
             
             result = PrefabUtility.SaveAsPrefabAsset(audioManager.gameObject, path).GetComponent<AudioManager>();

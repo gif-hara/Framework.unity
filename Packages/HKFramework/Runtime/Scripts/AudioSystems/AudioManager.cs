@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks.Triggers;
 using HK.Framework.TimeSystems;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Serialization;
 
 namespace HK.Framework.AudioSystems
 {
@@ -14,7 +15,7 @@ namespace HK.Framework.AudioSystems
     public class AudioManager : MonoBehaviour
     {
         [SerializeField]
-        private AudioSource bgmSource;
+        private AudioSource audioSource;
 
         [SerializeField]
         private SoundEffectElement soundEffectElementPrefab;
@@ -23,7 +24,7 @@ namespace HK.Framework.AudioSystems
 
         public static AudioManager Instance { get; private set; }
         
-        public static AudioSource BGMSource => Instance.bgmSource;
+        public static AudioSource AudioSource => Instance.audioSource;
 
         private void Awake()
         {
@@ -40,51 +41,38 @@ namespace HK.Framework.AudioSystems
         public static void PlayBGM(AudioClip clip)
         {
             Instance.fadeStream?.Dispose();
-            Instance.bgmSource.clip = clip;
-            Instance.bgmSource.loop = true;
-            Instance.bgmSource.Play();
+            Instance.audioSource.clip = clip;
+            Instance.audioSource.loop = true;
+            Instance.audioSource.Play();
         }
 
         public static void FadeBGM(float duration, float to)
         {
             Instance.fadeStream?.Dispose();
-            var original = Instance.bgmSource.volume;
+            var original = Instance.audioSource.volume;
             var time = 0.0f;
             Instance.fadeStream = Instance.GetAsyncUpdateTrigger()
                 .Subscribe(_ =>
                 {
                     time += TimeManager.Game.deltaTime;
-                    Instance.bgmSource.volume = Mathf.Lerp(original, to, time / duration);
+                    Instance.audioSource.volume = Mathf.Lerp(original, to, time / duration);
                     if (time >= duration)
                     {
-                        Instance.bgmSource.volume = to;
+                        Instance.audioSource.volume = to;
                         Instance.fadeStream.Dispose();
                     }
                 });
         }
-
-        public static async UniTask PlaySEAsync(AudioClip clip, Action<SoundEffectElement> onCreatedAction = null)
-        {
-            var element = CreateSoundEffectElement();
-            onCreatedAction?.Invoke(element);
-            await element.PlayAsync(clip);
-            Destroy(element.gameObject);
-        }
-
-        public static void PlaySE(AudioClip clip, Action<SoundEffectElement> onCreated = null)
-        {
-            PlaySEAsync(clip, onCreated).Forget();
-        }
         
-        public static SoundEffectElement CreateSoundEffectElement()
+        public static void PlayOneShot(AudioClip clip, float volumeScale = 1.0f)
         {
-            return Instantiate(Instance.soundEffectElementPrefab, Instance.transform);
+            Instance.audioSource.PlayOneShot(clip, volumeScale);
         }
         
 #if UNITY_EDITOR
-        public void SetBGMSource(AudioSource source)
+        public void SetAudioSource(AudioSource source)
         {
-            this.bgmSource = source;
+            this.audioSource = source;
         }
         
         public void SetSoundEffectElementPrefab(SoundEffectElement prefab)
