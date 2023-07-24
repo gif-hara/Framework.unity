@@ -23,8 +23,8 @@ namespace HK.Framework.Editor
         {
             var provider = new FrameworkSettingsProvider("Project/HKFramework", SettingsScope.Project)
             {
-                label = "HKFramework",
-                keywords = new HashSet<string>(new[] { "HKFramework" })
+                label = "HK Framework",
+                keywords = new HashSet<string>(new[] { "HK Framework" })
             };
             return provider;
         }
