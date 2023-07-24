@@ -48,6 +48,13 @@ namespace HK.Framework.BootSystems
         /// </summary>
         public static event Action<BuiltinContainerBuilder> AdditionalSetupContainerBuilderAsync;
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void InitializeOnSubsystemRegistration()
+        {
+            AdditionalSetupAsync = null;
+            AdditionalSetupContainerBuilderAsync = null;
+        }
+        
         /// <summary>
         /// 初期化
         /// </summary>
