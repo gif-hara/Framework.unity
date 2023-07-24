@@ -237,43 +237,10 @@ namespace HK.Framework.Editor
                 .GetComponent<AudioSource>();
             audioSource.transform.SetParent(audioManager.transform);
             audioManager.SetAudioSource(audioSource);
-            audioManager.SetSoundEffectElementPrefab(CreateDefaultSoundEffectElement());
             
             result = PrefabUtility.SaveAsPrefabAsset(audioManager.gameObject, path).GetComponent<AudioManager>();
             // audioManager.gameObjectを削除する
             Object.DestroyImmediate(audioManager.gameObject);
-
-            return result;
-        }
-        
-        private static SoundEffectElement CreateDefaultSoundEffectElement()
-        {
-            const string path = "Assets/HKFramework/SoundEffectElement.prefab";
-            
-            // すでにプロジェクトにSoundEffectElementがある場合は作成しない
-            var result = AssetDatabase.LoadAssetAtPath<SoundEffectElement>(path);
-            if (result != null)
-            {
-                return result;
-            }
-            
-            // ゲームオブジェクトを新規作成
-            var soundEffectElement = new GameObject(
-                "SoundEffectElement",
-                typeof(SoundEffectElement)
-                )
-                .GetComponent<SoundEffectElement>();
-            var audioSource = new GameObject(
-                "AudioSource",
-                typeof(AudioSource)
-                )
-                .GetComponent<AudioSource>();
-            audioSource.transform.SetParent(soundEffectElement.transform);
-            soundEffectElement.SetAudioSource(audioSource);
-            
-            result = PrefabUtility.SaveAsPrefabAsset(soundEffectElement.gameObject, path).GetComponent<SoundEffectElement>();
-            // soundEffectElement.gameObjectを削除する
-            Object.DestroyImmediate(soundEffectElement.gameObject);
 
             return result;
         }

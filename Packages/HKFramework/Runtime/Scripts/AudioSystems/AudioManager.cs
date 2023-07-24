@@ -17,9 +17,6 @@ namespace HK.Framework.AudioSystems
         [SerializeField]
         private AudioSource audioSource;
 
-        [SerializeField]
-        private SoundEffectElement soundEffectElementPrefab;
-
         private readonly Dictionary<AudioClip, SortedList<int, SoundEffectData>> soundEffectData = new();
 
         private IDisposable fadeStream;
@@ -151,11 +148,6 @@ namespace HK.Framework.AudioSystems
         public void SetAudioSource(AudioSource source)
         {
             this.audioSource = source;
-        }
-        
-        public void SetSoundEffectElementPrefab(SoundEffectElement prefab)
-        {
-            this.soundEffectElementPrefab = prefab;
         }
 #endif
     }
