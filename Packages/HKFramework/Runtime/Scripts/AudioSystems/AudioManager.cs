@@ -28,6 +28,12 @@ namespace HK.Framework.AudioSystems
         
         public static AudioSource SeSource => Instance.seSource;
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void Initialize()
+        {
+            Instance = null;
+        }
+        
         private void Awake()
         {
             Assert.IsNull(Instance);
