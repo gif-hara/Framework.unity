@@ -32,11 +32,16 @@ public class TestSceneController : MonoBehaviour
             blendSeconds = 0.0f,
         };
         animationController.Play(animationBlendData);
+        AudioManager.RegisterSoundEffectData(this.soundEffectClip, 10);
 
         this.GetAsyncUpdateTrigger()
             .Subscribe(_ =>
             {
-                if (Keyboard.current.qKey.isPressed)
+                if (Keyboard.current.qKey.wasPressedThisFrame)
+                {
+                    AudioManager.PlayOneShot(this.soundEffectClip);
+                }
+                if (Keyboard.current.wKey.isPressed)
                 {
                     AudioManager.PlayOneShot(this.soundEffectClip);
                 }
