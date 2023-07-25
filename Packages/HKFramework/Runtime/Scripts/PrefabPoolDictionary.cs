@@ -10,6 +10,8 @@ namespace HK.Framework.PoolSystems
     public sealed class PrefabPoolDictionary<T> : IDisposable where T : Component
     {
         private readonly Dictionary<T, PrefabPool<T>> table = new();
+        
+        public IReadOnlyDictionary<T, PrefabPool<T>> Table => this.table;
 
         public PrefabPool<T> Get(T prefab)
         {

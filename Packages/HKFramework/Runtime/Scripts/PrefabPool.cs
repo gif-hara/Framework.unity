@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 using Object = UnityEngine.Object;
@@ -10,6 +11,10 @@ namespace HK.Framework.PoolSystems
     public sealed class PrefabPool<T> : IDisposable where T : Component
     {
         private readonly ObjectPool<T> objectPool;
+        
+        public readonly List<T> ActiveElements = new();
+
+        public readonly HashSet<T> All = new();
 
         public PrefabPool(T original, int capacity = 16, int maxSize = 128)
         {
@@ -26,12 +31,29 @@ namespace HK.Framework.PoolSystems
 
         public T Get()
         {
-            return this.objectPool.Get();
+            var element = this.objectPool.Get();
+            this.ActiveElements.Add(element);
+            if (!this.All.Contains(element))
+            {
+                this.All.Add(element);
+            }
+            return element;
         }
 
         public void Release(T element)
         {
             this.objectPool.Release(element);
+            this.ActiveElements.Remove(element);
+        }
+        
+        public void ReleaseAll()
+        {
+            foreach (var element in this.ActiveElements)
+            {
+                this.objectPool.Release(element);
+            }
+            
+            this.ActiveElements.Clear();
         }
 
         public void Clear()
