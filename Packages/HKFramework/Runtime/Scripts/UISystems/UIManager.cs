@@ -1,11 +1,10 @@
-using System;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace HK.Framework.UISystems
 {
     /// <summary>
+    /// UIを管理するクラス
     /// </summary>
     public sealed class UIManager : MonoBehaviour
     {
@@ -25,30 +24,18 @@ namespace HK.Framework.UISystems
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-
-        public static T Open<T>(T uiViewPrefab) where T : UIView
+        
+        public static T Register<T>(T uiViewPrefab) where T : UIView<T>
         {
-            return Instantiate(uiViewPrefab, Instance.uiParent);
-        }
+            var uiView = Instantiate(uiViewPrefab, Instance.uiParent);
+            uiView.HideImmediate();
 
-        public static void Close(UIView uiView)
+            return uiView;
+        }
+        
+        public static void Unregister<T>(UIView<T> uiView) where T : UIView<T>
         {
             Destroy(uiView.gameObject);
-        }
-
-        public static void Show(UIView uiView)
-        {
-            uiView.gameObject.SetActive(true);
-        }
-
-        public static void Hidden(UIView uiView)
-        {
-            uiView.gameObject.SetActive(false);
-        }
-
-        public static void SetAsLastSibling(UIView uiView)
-        {
-            uiView.transform.SetAsLastSibling();
         }
         
         public static Vector2 WorldToScreenPoint(Vector3 worldPosition, Camera worldCamera)
