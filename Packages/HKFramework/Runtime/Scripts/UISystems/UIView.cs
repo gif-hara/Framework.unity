@@ -30,12 +30,12 @@ namespace HK.Framework.UISystems
             return UniTask.CompletedTask;
         }
         
-        public void ShowImmediate()
+        public virtual void ShowImmediate()
         {
             this.gameObject.SetActive(true);
         }
         
-        public void HideImmediate()
+        public virtual void HideImmediate()
         {
             this.gameObject.SetActive(false);
         }
