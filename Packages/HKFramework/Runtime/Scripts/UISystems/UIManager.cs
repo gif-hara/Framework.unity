@@ -35,6 +35,11 @@ namespace HK.Framework.UISystems
         
         public static void Unregister<T>(UIView<T> uiView) where T : UIView<T>
         {
+            if(ApplicationQuitObserver.IsQuit)
+            {
+                return;
+            }
+            
             Destroy(uiView.gameObject);
         }
         
