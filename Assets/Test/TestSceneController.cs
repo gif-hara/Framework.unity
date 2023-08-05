@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks.Linq;
 using Cysharp.Threading.Tasks.Triggers;
 using HK.Framework.AnimationSystems;
 using HK.Framework.AudioSystems;
+using HK.Framework.UISystems;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -46,5 +47,12 @@ public class TestSceneController : MonoBehaviour
                     AudioManager.PlayOneShot(this.soundEffectClip);
                 }
             });
+        
+        var presenter = new TestPresenter();
+    }
+
+    public class TestPresenter : UIPresenter
+    {
+        
     }
 }

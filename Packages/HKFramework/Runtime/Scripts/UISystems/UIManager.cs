@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -13,6 +17,8 @@ namespace HK.Framework.UISystems
 
         [SerializeField]
         private Camera uiCamera;
+        
+        private readonly List<IUIPresenter> presenters = new();
 
         public static UIManager Instance { get; private set; }
 
@@ -25,7 +31,7 @@ namespace HK.Framework.UISystems
             DontDestroyOnLoad(this.gameObject);
         }
         
-        public static T Register<T>(T uiViewPrefab) where T : UIView<T>
+        public static T RegisterView<T>(T uiViewPrefab) where T : UIView<T>
         {
             var uiView = Instantiate(uiViewPrefab, Instance.uiParent);
             uiView.HideImmediate();
@@ -33,7 +39,7 @@ namespace HK.Framework.UISystems
             return uiView;
         }
         
-        public static void Unregister<T>(UIView<T> uiView) where T : UIView<T>
+        public static void UnregisterView<T>(UIView<T> uiView) where T : UIView<T>
         {
             if(ApplicationQuitObserver.IsQuit)
             {
@@ -41,6 +47,13 @@ namespace HK.Framework.UISystems
             }
             
             Destroy(uiView.gameObject);
+        }
+        
+        public static async UniTask RegisterPresenter<T>(T uiPresenter, CancellationToken cancellationToken) where T : IUIPresenter
+        {
+            Instance.presenters.Add(uiPresenter);
+            await uiPresenter.InvokeAsync(cancellationToken);
+            Instance.presenters.Remove(uiPresenter);
         }
         
         public static Vector2 WorldToScreenPoint(Vector3 worldPosition, Camera worldCamera)

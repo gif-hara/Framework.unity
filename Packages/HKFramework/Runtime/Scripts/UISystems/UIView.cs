@@ -10,12 +10,12 @@ namespace HK.Framework.UISystems
     {
         public T Register()
         {
-            return UIManager.Register(this as T);
+            return UIManager.RegisterView(this as T);
         }
         
         public void Unregister()
         {
-            UIManager.Unregister(this);
+            UIManager.UnregisterView(this);
         }
         
         public virtual UniTask ShowAsync()
