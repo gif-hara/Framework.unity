@@ -76,7 +76,7 @@ namespace HK.Framework.AudioSystems
         {
             if (Instance.soundEffectData.TryGetValue(clip, out var sortedList))
             {
-                PlayOneShotAsync(clip, sortedList).Forget();
+                PlayOneShotAsync(clip, sortedList, volumeScale).Forget();
             }
             else
             {
@@ -84,7 +84,7 @@ namespace HK.Framework.AudioSystems
             }
         }
 
-        private static async UniTask PlayOneShotAsync(AudioClip clip, SortedList<int, SoundEffectData> list)
+        private static async UniTask PlayOneShotAsync(AudioClip clip, SortedList<int, SoundEffectData> list, float volumeScale = 1.0f)
         {
             if (list.Count <= 0)
             {
@@ -94,7 +94,7 @@ namespace HK.Framework.AudioSystems
             var data = list.Values[0];
             list.RemoveAt(0);
             
-            Instance.seSource.PlayOneShot(clip, data.volumeScale);
+            Instance.seSource.PlayOneShot(clip, data.volumeScale * volumeScale);
             await UniTask.Delay(TimeSpan.FromSeconds(clip.length), cancellationToken: Instance.GetCancellationTokenOnDestroy());
             list.Add(data.index, data);
         }
