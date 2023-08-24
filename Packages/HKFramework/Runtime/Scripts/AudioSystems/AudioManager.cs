@@ -6,6 +6,7 @@ using Cysharp.Threading.Tasks.Triggers;
 using HK.Framework.TimeSystems;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Audio;
 
 namespace HK.Framework.AudioSystems
 {
@@ -14,6 +15,9 @@ namespace HK.Framework.AudioSystems
     /// </summary>
     public class AudioManager : MonoBehaviour
     {
+        [SerializeField]
+        private AudioMixer audioMixer;
+        
         [SerializeField]
         private AudioSource bgmSource;
         
@@ -25,6 +29,8 @@ namespace HK.Framework.AudioSystems
         private IDisposable fadeStream;
 
         public static AudioManager Instance { get; private set; }
+        
+        public static AudioMixer AudioMixer => Instance.audioMixer;
         
         public static AudioSource SeSource => Instance.seSource;
 
