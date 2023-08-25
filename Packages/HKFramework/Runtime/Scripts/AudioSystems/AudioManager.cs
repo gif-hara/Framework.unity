@@ -57,6 +57,7 @@ namespace HK.Framework.AudioSystems
             Instance.fadeStream?.Dispose();
             Instance.bgmSource.clip = clip;
             Instance.bgmSource.loop = true;
+            Instance.bgmSource.volume = 1.0f;
             Instance.bgmSource.Play();
         }
 
