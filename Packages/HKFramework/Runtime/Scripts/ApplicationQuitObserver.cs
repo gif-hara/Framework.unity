@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using HK.Framework.MessageSystems;
+using MessagePipe;
+using UnityEngine;
 
 namespace HK.Framework
 {
@@ -11,7 +13,7 @@ namespace HK.Framework
     public static class ApplicationQuitObserver
     {
         public static bool IsQuit { get; private set; }
-        
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
         {
@@ -19,10 +21,20 @@ namespace HK.Framework
             Application.quitting += OnApplicationQuit;
             IsQuit = false;
         }
-        
+
         private static void OnApplicationQuit()
         {
             IsQuit = true;
+            Quitting.Publish();
+        }
+
+        public sealed class Quitting : Message<Quitting>
+        {
+        }
+
+        public static void RegisterEvents(BuiltinContainerBuilder containerBuilder)
+        {
+            containerBuilder.AddMessageBroker<Quitting>();
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks.Linq;
 using Cysharp.Threading.Tasks.Triggers;
+using HK.Framework;
 using HK.Framework.AnimationSystems;
 using HK.Framework.AudioSystems;
 using HK.Framework.UISystems;
@@ -12,13 +13,13 @@ public class TestSceneController : MonoBehaviour
 {
     [SerializeField]
     private AnimationClip testClip;
-    
+
     [SerializeField]
     private AnimationController animationController;
-    
+
     [SerializeField]
     private AudioClip soundEffectClip;
-    
+
     private async void Start()
     {
         Debug.Log("TestSceneController.Start");
@@ -26,7 +27,7 @@ public class TestSceneController : MonoBehaviour
         Debug.Log("TestSceneController.Start: BootSystem.IsReady 1");
         await HK.Framework.BootSystems.BootSystem.IsReady;
         Debug.Log("TestSceneController.Start: BootSystem.IsReady 2");
-        
+
         var animationBlendData = new AnimationBlendData()
         {
             animationClip = testClip,
@@ -34,6 +35,11 @@ public class TestSceneController : MonoBehaviour
         };
         animationController.Play(animationBlendData);
         AudioManager.RegisterSoundEffectData(this.soundEffectClip, 10);
+        ApplicationQuitObserver.Quitting
+            .Subscribe(_ =>
+            {
+                Debug.Log("ApplicationQuitObserver.Quitting");
+            });
 
         this.GetAsyncUpdateTrigger()
             .Subscribe(_ =>
@@ -47,12 +53,12 @@ public class TestSceneController : MonoBehaviour
                     AudioManager.PlayOneShot(this.soundEffectClip);
                 }
             });
-        
+
         var presenter = new TestPresenter();
     }
 
     public class TestPresenter : UIPresenter
     {
-        
+
     }
 }

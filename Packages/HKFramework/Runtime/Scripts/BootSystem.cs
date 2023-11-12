@@ -25,7 +25,7 @@ namespace HK.Framework.BootSystems
                 return UniTask.WaitUntil(() => initializeState == InitializeState.Initialized);
             }
         }
-        
+
         /// <summary>
         /// 初期化の状態
         /// </summary>
@@ -35,14 +35,14 @@ namespace HK.Framework.BootSystems
             Initializing,
             Initialized,
         }
-        
+
         private static InitializeState initializeState = InitializeState.None;
-        
+
         /// <summary>
         /// 追加の初期化処理
         /// </summary>
         public static event Func<UniTask> AdditionalSetupAsync;
-        
+
         /// <summary>
         /// 追加のイベント登録処理
         /// </summary>
@@ -54,7 +54,7 @@ namespace HK.Framework.BootSystems
             AdditionalSetupAsync = null;
             AdditionalSetupContainerBuilderAsync = null;
         }
-        
+
         /// <summary>
         /// 初期化
         /// </summary>
@@ -75,7 +75,7 @@ namespace HK.Framework.BootSystems
             {
                 SetupAnimationSystems(setupData);
             }
-            
+
             // 非同期でセットアップ
             {
                 await UniTask.WhenAll(
@@ -96,7 +96,7 @@ namespace HK.Framework.BootSystems
         {
             AnimationController.SharedController = setupData.RuntimeAnimatorController;
         }
-        
+
         /// <summary>
         /// <see cref="UIManager"/>を生成する
         /// </summary>
@@ -105,7 +105,7 @@ namespace HK.Framework.BootSystems
             Object.Instantiate(setupData.UIManagerPrefab);
             return UniTask.CompletedTask;
         }
-        
+
         private static UniTask CreateAudioManagerAsync(SetupData setupData)
         {
             Object.Instantiate(setupData.AudioManagerPrefab);
@@ -121,8 +121,9 @@ namespace HK.Framework.BootSystems
             {
                 AdditionalSetupContainerBuilderAsync?.Invoke(builder);
                 TimeEvents.RegisterEvents(builder);
+                ApplicationQuitObserver.RegisterEvents(builder);
             });
-            
+
             return UniTask.CompletedTask;
         }
     }
