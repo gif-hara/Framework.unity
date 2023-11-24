@@ -29,7 +29,7 @@ namespace HK.Framework.AnimationSystems
             /// </summary>
             Aborted,
         }
-        
+
         public static RuntimeAnimatorController SharedController { set; get; }
 
         private const string OverrideClipAName = "ClipA";
@@ -56,16 +56,16 @@ namespace HK.Framework.AnimationSystems
         private AnimatorOverrideController overrideController;
 
         public TimeSystems.Time Time { set; get; } = TimeManager.Game;
-        
+
         private bool isInitialized;
-        
+
         private void Initialize()
         {
-            if(this.isInitialized)
+            if (this.isInitialized)
             {
                 return;
             }
-            
+
             this.isInitialized = true;
             Assert.IsNotNull(this.animator);
             this.overrideController = new AnimatorOverrideController();
@@ -89,7 +89,7 @@ namespace HK.Framework.AnimationSystems
         public void Play(AnimationClip clip, float blendSeconds = 0.0f)
         {
             this.Initialize();
-            
+
             // 前回のアニメーション処理を終了させる
             this.animationCancelToken?.Dispose();
             this.animationCancelToken = new CancellationTokenDisposable();
@@ -136,14 +136,21 @@ namespace HK.Framework.AnimationSystems
                 return CompleteType.Aborted;
             }
 
-            while (this.animator.GetCurrentAnimatorStateInfo(this.currentLayerIndex).normalizedTime < 1.0f)
+            if (this.animator.GetCurrentAnimatorStateInfo(currentLayerIndex).loop)
             {
-                if (token.IsCancellationRequested)
+                await UniTask.WaitUntilCanceled(token);
+            }
+            else
+            {
+                while (this.animator.GetCurrentAnimatorStateInfo(this.currentLayerIndex).normalizedTime < 1.0f)
                 {
-                    return CompleteType.Aborted;
-                }
+                    if (token.IsCancellationRequested)
+                    {
+                        return CompleteType.Aborted;
+                    }
 
-                await UniTask.NextFrame(PlayerLoopTiming.Update, token);
+                    await UniTask.NextFrame(PlayerLoopTiming.Update, token);
+                }
             }
 
             return CompleteType.Success;
