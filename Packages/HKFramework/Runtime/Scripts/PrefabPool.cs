@@ -11,7 +11,7 @@ namespace HK.Framework.PoolSystems
     public sealed class PrefabPool<T> : IDisposable where T : Component
     {
         private readonly ObjectPool<T> objectPool;
-        
+
         public readonly List<T> ActiveElements = new();
 
         public readonly HashSet<T> All = new();
@@ -22,7 +22,13 @@ namespace HK.Framework.PoolSystems
                 createFunc: () => Object.Instantiate(original),
                 actionOnGet: target => target.gameObject.SetActive(true),
                 actionOnRelease: target => target.gameObject.SetActive(false),
-                actionOnDestroy: target => Object.Destroy(target.gameObject),
+                actionOnDestroy: target =>
+                {
+                    if (target != null && target.gameObject != null)
+                    {
+                        Object.Destroy(target.gameObject);
+                    }
+                },
                 collectionCheck: true,
                 defaultCapacity: capacity,
                 maxSize: maxSize
@@ -45,14 +51,14 @@ namespace HK.Framework.PoolSystems
             this.objectPool.Release(element);
             this.ActiveElements.Remove(element);
         }
-        
+
         public void ReleaseAll()
         {
             foreach (var element in this.ActiveElements)
             {
                 this.objectPool.Release(element);
             }
-            
+
             this.ActiveElements.Clear();
         }
 
