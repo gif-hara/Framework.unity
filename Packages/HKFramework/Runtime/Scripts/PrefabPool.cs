@@ -21,7 +21,13 @@ namespace HK.Framework.PoolSystems
             this.objectPool = new ObjectPool<T>(
                 createFunc: () => Object.Instantiate(original),
                 actionOnGet: target => target.gameObject.SetActive(true),
-                actionOnRelease: target => target.gameObject.SetActive(false),
+                actionOnRelease: target =>
+                {
+                    if (target != null && target.gameObject != null)
+                    {
+                        target.gameObject.SetActive(false);
+                    }
+                },
                 actionOnDestroy: target =>
                 {
                     if (target != null && target.gameObject != null)
